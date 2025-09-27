@@ -1,0 +1,112 @@
+import RPi.GPIO as GPIO
+import time
+
+class FutureEngineersRobot:
+    def __init__(self):
+        self.IN3 = 38
+        self.IN4 = 32
+        self.SERVO_PIN = 33
+        self.STRAIGHT = 50
+        self.RIGHT = 100
+        self.LEFT = 10
+        self.FRONT_TRIGGER = 13
+        self.FRONT_ECHO = 11
+        self.WALL_DISTANCE = 60
+        self.MAX_DISTANCE = 200
+        self.is_turning = False
+        self.turn_start_time = 0
+        self.turn_duration = 0.3
+
+        GPIO.setmode(GPIO.BOARD)
+        GPIO.setwarnings(False)
+        GPIO.setup(self.IN3, GPIO.OUT)
+        GPIO.setup(self.IN4, GPIO.OUT)
+        GPIO.setup(self.SERVO_PIN, GPIO.OUT)
+        self.servo_pwm = GPIO.PWM(self.SERVO_PIN, 50)
+        self.servo_pwm.start(0)
+        GPIO.setup(self.FRONT_TRIGGER, GPIO.OUT)
+        GPIO.setup(self.FRONT_ECHO, GPIO.IN)
+
+        self.set_steering_angle(self.STRAIGHT)
+        self.keep_moving_forward()
+
+    def set_steering_angle(self, angle):
+        duty_cycle = 2.5 + (angle / 180.0) * 10
+        self.servo_pwm.ChangeDutyCycle(duty_cycle)
+        time.sleep(0.05)
+        self.servo_pwm.ChangeDutyCycle(0)
+
+    def keep_moving_forward(self):
+        GPIO.output(self.IN3, GPIO.LOW)
+        GPIO.output(self.IN4, GPIO.HIGH)
+
+    def measure_distance_ultra_fast(self):
+        try:
+            GPIO.output(self.FRONT_TRIGGER, False)
+            time.sleep(0.001)
+            GPIO.output(self.FRONT_TRIGGER, True)
+            time.sleep(0.00001)
+            GPIO.output(self.FRONT_TRIGGER, False)
+
+            start_time = time.time()
+            while GPIO.input(self.FRONT_ECHO) == 0:
+                pulse_start = time.time()
+                if pulse_start - start_time > 0.05:
+                    return self.MAX_DISTANCE
+
+            while GPIO.input(self.FRONT_ECHO) == 1:
+                pulse_end = time.time()
+                if pulse_end - pulse_start > 0.05:
+                    return self.MAX_DISTANCE
+
+            distance = (pulse_end - pulse_start) * 17150
+            return round(distance, 1) if 2 < distance < self.MAX_DISTANCE else self.MAX_DISTANCE
+        except:
+            return self.MAX_DISTANCE
+
+    def instant_left_turn(self):
+        self.keep_moving_forward()
+        self.set_steering_angle(self.LEFT)
+        self.is_turning = True
+        self.turn_start_time = time.time()
+
+    def run_mission_one(self):
+        try:
+            time.sleep(1)
+            while True:
+                self.keep_moving_forward()
+                if self.is_turning:
+                    elapsed = time.time() - self.turn_start_time
+                    if elapsed < self.turn_duration:
+                        self.set_steering_angle(self.LEFT)
+                    else:
+                        self.is_turning = False
+                        self.set_steering_angle(self.STRAIGHT)
+                else:
+                    distance = self.measure_distance_ultra_fast()
+                    if distance <= self.WALL_DISTANCE:
+                        self.instant_left_turn()
+                    else:
+                        self.set_steering_angle(self.STRAIGHT)
+                time.sleep(0.01)
+        except KeyboardInterrupt:
+            self.emergency_stop()
+
+    def emergency_stop(self):
+        try:
+            GPIO.output(self.IN3, GPIO.LOW)
+            GPIO.output(self.IN4, GPIO.LOW)
+            self.servo_pwm.stop()
+            GPIO.cleanup()
+        except:
+            pass
+
+def main():
+    try:
+        robot = FutureEngineersRobot()
+        robot.run_mission_one()
+    except:
+        GPIO.cleanup()
+
+if __name__ == "__main__":
+    main()

@@ -37,7 +37,6 @@ Our team works to distribute tasks in an organized manner that ensures the integ
 
 ![Layan](https://github.com/user-attachments/assets/90a2aeec-ad0a-4dac-b205-2737add4c847)
 
-***
 Despite our different ages and personal interests, we share a common passion: a love for technology and robotics, and a continuous desire to learn and improve. This passion drives us to participate in the Future Engineer competition and work together as a team
 ___
 # Second, define our project

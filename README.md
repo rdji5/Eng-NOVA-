@@ -40,6 +40,7 @@ Our team works to distribute tasks in an organized manner that ensures the integ
 Despite our different ages and personal interests, we share a common passion: a love for technology and robotics, and a continuous desire to learn and improve. This passion drives us to participate in the Future Engineer competition and work together as a team
 ___
  **Our Vision and Goal**
+ 
 Our vision is to develop an intelligent robot capable of performing smart commands independently. We aim to build a system that can analyze its surroundings, make decisions, and complete tasks efficiently without direct human control. This project represents our first step toward creating innovative solutions that support our community and inspire future technological advancements
 Through this competition, we have gained valuable experience in robotics, programming, and teamwork. We also developed essential skills such as critical thinking, creativity, and planning
 In the future, we plan to use what we’ve learned to improve our projects, support younger students, and continue developing technologies that make a positive impact

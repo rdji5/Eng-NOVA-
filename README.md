@@ -55,7 +55,7 @@ The Ultrasonic sensors measure distance by sending pulses and calculating their 
 The camera, on the other hand, is responsible for color recognition; for example, if it detects the color red, the data is sent to the Raspberry Pi controller, which determines the robot’s movement according to the programmed algorithms.
 ***
 #A journey of challenge and adaptation:
-When we first started, we had planned to use a vehicle with four DC motors. However, before we could finalize it, we learned of a law requiring fewer than three-quarters of the motors to be DC. This change forced us to build a completely different vehicle, which took a long time. However, we finally got it built and started programming and testing 
+When we first started, we had planned to use a vehicle with four DC motors. However, before we could finalize it, we learned of a law requiring fewer than three-quarters of the motors to be DC. This change forced us to build a completely different vehicle, which took a long time. However, we finally got it built and started programming and testing            Click here to see the installation steps --> https://www.youtube.com/shorts/4X3wNT3hZlc 
 
 
 While assembling the car, we faced a space problem, so we brought a customized base to add a second layer and create more room. In the end, we installed the new base and successfully solved the problem.
@@ -72,3 +72,8 @@ We then faced several issues with the codes we used, which forced us to go throu
 <img width="549" height="619" alt="لقطة شاشة 2025-10-02 002926" src="https://github.com/user-attachments/assets/856239c5-695a-432f-8670-5039dce919b7" />
 <img width="555" height="785" alt="لقطة شاشة 2025-10-02 002911" src="https://github.com/user-attachments/assets/c23f0b38-898b-4956-a0b9-9801583448b5" />
 
+In the end, we achieved a well-structured robot with balanced weight distribution, which helped improve its performance and stability. After assembling it, we successfully programmed it to complete the required tasks efficiently and accurately 
+
+And here is a picture of the final look of the robot after completing its assembly and programming
+
+![تركيبة نهائية](https://github.com/user-attachments/assets/99012b50-add0-4f4c-8960-61551dc3a453)

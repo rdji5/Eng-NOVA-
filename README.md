@@ -63,3 +63,12 @@ While assembling the car, we faced a space problem, so we brought a customized b
 
 
 We then faced several issues with the codes we used, which forced us to go through a long journey of modifying, testing, then modifying and testing again, especially since this is the first year for the three of us in both WRO and (Future Engineers), which made it more difficult, but the codes and the movement have improved a little over time, and we are confident that it will be ready one way or another for the final competition.
+***
+# Identify electronic parts and vehicle assembly
+
+
+<img width="552" height="785" alt="لقطة شاشة 2025-10-02 002825" src="https://github.com/user-attachments/assets/2edfdc1f-d2eb-4740-a744-83cdb55706a9" />
+<img width="553" height="792" alt="لقطة شاشة 2025-10-02 002842" src="https://github.com/user-attachments/assets/a667fc56-0b34-484b-8200-521c0e03250f" />
+<img width="549" height="619" alt="لقطة شاشة 2025-10-02 002926" src="https://github.com/user-attachments/assets/856239c5-695a-432f-8670-5039dce919b7" />
+<img width="555" height="785" alt="لقطة شاشة 2025-10-02 002911" src="https://github.com/user-attachments/assets/c23f0b38-898b-4956-a0b9-9801583448b5" />
+

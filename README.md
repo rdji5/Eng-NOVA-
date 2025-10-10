@@ -1,4 +1,8 @@
-#  NOVA Engineers
+# NOVA-Future-Engineers
+### ***We Are Team The NOVA Engineers***
+<img width="1024" height="1024" alt="Gemini_Generated_Image_uutpbtuutpbtuutp" src="https://github.com/user-attachments/assets/31be79c1-3718-4530-9d4e-be469057e545" />
+
+
 **This documentation showcases the design, engineering, and programming stages of our Future Engineers category vehicle. It was designed to avoid obstacles and navigate and pivot smoothly. Our journey focused on addressing complex engineering challenges through custom mechanical solutions and effective sensor strategies**
 ***
 Let us take you on a tour through our journey in the Future Engineer competition

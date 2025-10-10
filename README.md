@@ -23,16 +23,14 @@ The name “NOVA” represents a new star that suddenly shines with renewed ener
 
 ![team](https://github.com/user-attachments/assets/6a6e0eb1-ea49-4e35-adb3-13675fb369c5)
 
+<hr>
 
-**This documentation showcases the design, engineering, and programming stages of our Future Engineers category vehicle. It was designed to avoid obstacles and navigate and pivot smoothly. Our journey focused on addressing complex engineering challenges through custom mechanical solutions and effective sensor strategies**
-***
-Let us take you on a tour through our journey in the Future Engineer competition
-***
-# First, an introduction to our team 
-**We are a group of passionate students participating in the Future Engineer competition  
-Our goal is to learn, build, and showcase our creativity through robotics and programming**
+## **First, an introduction to our team**
+
+We are a group of passionate students participating in the Future Engineer competition  
+Our goal is to learn, build, and showcase our creativity through robotics and programming
 Our team works to distribute tasks in an organized manner that ensures the integration of efforts and the effective achievement of project objectives
----
+
 **Ragad Wissam Al-Jaabari** 
 - From Hebron
 - 16 years old
@@ -42,7 +40,7 @@ Our team works to distribute tasks in an organized manner that ensures the integ
 
 ![Ragad](https://github.com/user-attachments/assets/2fb120fb-9d30-4228-af2c-c7afd8a42606)
 
----
+
 **Rasha Islam Al-Fakhouri**
 - From Hebron
 - 15 years old
@@ -52,7 +50,7 @@ Our team works to distribute tasks in an organized manner that ensures the integ
 
 ![Rasha](https://github.com/user-attachments/assets/e0a543f8-f8df-4e9a-b9c7-b79bd705553b)
 
----
+
 **Lian Yousri Amro**
 - From Hebron
 - 14 years old
@@ -61,6 +59,7 @@ Our team works to distribute tasks in an organized manner that ensures the integ
 - https://www.instagram.com/layanamr5
 
 ![Layan](https://github.com/user-attachments/assets/90a2aeec-ad0a-4dac-b205-2737add4c847)
+
 
 Despite our different ages and personal interests, we share a common passion: a love for technology and robotics, and a continuous desire to learn and improve. This passion drives us to participate in the Future Engineer competition and work together as a team
 

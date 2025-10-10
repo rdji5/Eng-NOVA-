@@ -1,6 +1,27 @@
 # NOVA-Future-Engineers
 ### ***We Are Team The NOVA Engineers***
-<img width="1024" height="1024" alt="Gemini_Generated_Image_uutpbtuutpbtuutp" src="https://github.com/user-attachments/assets/31be79c1-3718-4530-9d4e-be469057e545" />
+</p>
+<p align="center">
+<img width="1024" height="1024" alt="Nova symbol" src="https://github.com/user-attachments/assets/4c8e5975-c9d1-4472-8a33-4b9ffa8786b2" />
+
+
+</p>
+
+
+
+<p align="center">
+
+# **Part 1: About Us**
+
+## **This is our team**
+
+We are three students from Hebron, Palestine, and we belong to the Programming and Artificial Intelligence clubs under the guidance of our coach, Abeer Al-Jabari. Our team was established with our participation in the Future Engineer program on September 1st. We have also previously participated in programming and STEM clubs.
+
+
+## **Team name**
+The name “NOVA” represents a new star that suddenly shines with renewed energy — symbolizing innovation, brilliance, and growth. It reflects our team’s spirit of creativity and ambition, as we strive to illuminate the field of engineering and technology with fresh ideas that drive progress and inspire excellence.
+
+![team](https://github.com/user-attachments/assets/6a6e0eb1-ea49-4e35-adb3-13675fb369c5)
 
 
 **This documentation showcases the design, engineering, and programming stages of our Future Engineers category vehicle. It was designed to avoid obstacles and navigate and pivot smoothly. Our journey focused on addressing complex engineering challenges through custom mechanical solutions and effective sensor strategies**

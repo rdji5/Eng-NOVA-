@@ -72,6 +72,10 @@ ___
 Our vision is to develop an intelligent robot capable of performing smart commands independently. We aim to build a system that can analyze its surroundings, make decisions, and complete tasks efficiently without direct human control. This project represents our first step toward creating innovative solutions that support our community and inspire future technological advancements
 Through this competition, we have gained valuable experience in robotics, programming, and teamwork. We also developed essential skills such as critical thinking, creativity, and planning
 In the future, we plan to use what we’ve learned to improve our projects, support younger students, and continue developing technologies that make a positive impact
+
+### **Work Schedule** 
+
+
 ***
 # Second, define our project
 After assembling and designing the robot to meet the competition requirements, we programmed it to rely on Ultrasonic distance sensors alongside the camera.

@@ -1,12 +1,36 @@
 # NOVA-Future-Engineers
 ### ***We Are Team The NOVA Engineers***
+
 </p>
 <p align="center">
 <img width="1024" height="1024" alt="Nova symbol" src="https://github.com/user-attachments/assets/4c8e5975-c9d1-4472-8a33-4b9ffa8786b2" />
-
-
 </p>
 
+
+
+# Content
+`3DModels` This folder has the robot’s 3D design and the final rendered version
+
+`Document (PDF form)` Includes a short document with project info from GitHub, saved as a PDF for A4 printing
+
+`FlowChart` This folder includes flow diagrams that represent the logic and structure of the robot’s control system, showing how it interprets sensor data and executes movement decisions during tasks.
+
+`Tables` This folder includes all the tables we used in our project, such as time plans, task schedules, and data organization charts.
+
+`Program` Contains all the code we wrote for the WRO 2024 Future Engineers and some charts that explain it.
+
+`Robot-Photos` Includes multiple photos of the robot from various angles — top, side, and bottom — to provide a full visual overview of the design.
+
+`Schemes`Drawings that show how the robot’s parts and wires are connected.
+
+`Team-Photos` This folder features photos of our team members participating in the WRO 2025 Future Engineers competition.
+
+`Videos` Contains links to videos demonstrating how the robot performs and completes both missions successfully.
+
+`Readme`This README file is divided into three main sections for better organization and understanding of the project’s structure.
+
+  - [About Us](#part-1-about-us)
+  - [Mechanical Design](#part-2-mechanical-design)
 
 
 <p align="center">
@@ -57,7 +81,7 @@ Our team works to distribute tasks in an organized manner that ensures the integ
 
 
 
-**Lian Yousri Amro**
+**Layan Yousri Amro**
 - From Hebron
 - 14 years old
 - my hobbies are sports and handicrafts
@@ -82,7 +106,8 @@ Our vision is to develop an intelligent robot capable of performing smart comman
 </p>
 
 We developed a work plan to organize our steps and manage tasks within the team. It outlines what needs to be done each day, helping us set priorities, track our progress, and work with focus and teamwork to achieve our goals efficiently and accurately:
-![workplan](https://github.com/user-attachments/assets/fcc305e2-fc68-4f68-8649-5926dfc92730)
+<img width="1291" height="713" alt="Plan_schedule" src="https://github.com/user-attachments/assets/b3b48192-0a4a-46f4-b8da-cc856f5ef26e" />
+
 
 <hr>
 </p>

@@ -31,6 +31,7 @@
 
   - [About Us](#part-1-about-us)
   - [Mechanical Design](#part-2-mechanical-design)
+  - [Obstacle Management](#part-3-obstacle-management)
 
 
 <p align="center">
@@ -39,13 +40,15 @@
 
 ## **This is our team**
 
+
 We are three students from Hebron, Palestine, and we belong to the Programming and Artificial Intelligence clubs under the guidance of our coach, Abeer Al-Jabari. Our team was established with our participation in the Future Engineer program on September 1st. We have also previously participated in programming and STEM clubs.
 
 
 ## **Team name**
 The name “NOVA” represents a new star that suddenly shines with renewed energy — symbolizing innovation, brilliance, and growth. It reflects our team’s spirit of creativity and ambition, as we strive to illuminate the field of engineering and technology with fresh ideas that drive progress and inspire excellence.
 
-![team](https://github.com/user-attachments/assets/6a6e0eb1-ea49-4e35-adb3-13675fb369c5)
+![team photo](https://github.com/user-attachments/assets/2673ebbf-6e51-4e4e-b58a-4979f9cb4431)
+
 
 <hr>
 
@@ -62,7 +65,7 @@ Our team works to distribute tasks in an organized manner that ensures the integ
 -  Responsible for assembling the robot and executing programming tasks, integrating mechanical components with software to achieve the required performance and ensure the system operates efficiently
 - ragadaljabari1@gmail.com
 
-<img width="552" height="695" alt="raghad (2)" src="https://github.com/user-attachments/assets/ced60568-5799-4d81-b0c5-a7332f1f7fa9" />
+![ragad aljabari](https://github.com/user-attachments/assets/8b98042b-30b9-448b-9db8-dc492be81815)
 
 
 
@@ -75,7 +78,7 @@ Our team works to distribute tasks in an organized manner that ensures the integ
 - Responsible for technical and organizational aspects, participated in presenting changes in project structures, in addition to continuous follow-up between stops to clarify the overall vision
 - rashfakh9@gmail.com
 
-<img width="547" height="669" alt="rasha (2)" src="https://github.com/user-attachments/assets/5db42744-7069-4607-9c38-22149d29cfa3" />
+![Rasha AlFakhouri](https://github.com/user-attachments/assets/edfd2734-58f9-4977-b31a-40d831bdf7a7)
 
 
 
@@ -88,7 +91,8 @@ Our team works to distribute tasks in an organized manner that ensures the integ
 - She is responsible for documenting and writing reports on the project, and works on organizing the content and accurately documenting the work stages and results to present them in a professional and clear manner
 - amrolayan95@gmail.com
 
-<img width="559" height="746" alt="layan (2)" src="https://github.com/user-attachments/assets/99cd3c49-0248-4d56-a926-870bca8e550f" />
+![layan amro](https://github.com/user-attachments/assets/4e115d07-9c52-4cf7-a3f6-1b3798832854)
+
 
 
 
@@ -114,7 +118,7 @@ We developed a work plan to organize our steps and manage tasks within the team.
 
 # **Part 2: MECHANICAL DESIGN**
 ### **First, an introduction to the parts of the robot**
-**Robot mind**
+- **Robot mind**
 
 The Raspberry Pi 4 Model B serves as the Main Processing Unit (MPU), acting as the robot’s central brain. It executes the complex Python code and coordinates all real-time sensory data and actuator commands.
 We selected the Raspberry Pi 4 for its high-performance quad-core Cortex-A72 processor (1.8GHz) and 64-bit architecture. This computational power is non-negotiable, as it provides the necessary capacity to simultaneously manage:
@@ -123,7 +127,7 @@ We selected the Raspberry Pi 4 for its high-performance quad-core Cortex-A72 pro
 - In compliance with competition rules, the code is loaded onto the Raspberry Pi prior to the start. The entire autonomous routine is initiated by a physical push button connected to a GPIO pin, which activates the main Python script.
 ![R](https://github.com/user-attachments/assets/7df9a525-2814-4c7d-b86d-4e2bccb98d24)
 
-**Motor Driver L298N**
+- **Motor Driver L298N**
 
 L298N Dual H-Bridge Motor Driver: The Power Bridge
 The L298N module serves as an essential protective and intermediary power stage between the robot's battery and its drive motor.
@@ -145,13 +149,13 @@ Key Technical Data:
 - Approximate Dimensions: 4.3cm × 4.3cm × 2.7cm
 ![d](https://github.com/user-attachments/assets/9be4d7c9-9bb2-4e9f-9979-cf03fbd57654)
 
-**Motor DC**
+- **Motor DC**
 
 The DC Geared Motor provides the necessary mechanical power to drive the Single-Motor Rear-Wheel Drive (RWD) system. This component is a standard 9V DC motor with an integrated gearbox . The gear reduction is critical; it increases the motor’s torque significantly while reducing the output RPM, providing the crucial force needed for propulsion and enabling precise speed control at lower velocities. The motor is directly controlled by the 9V power output from the L298N Motor Driver, which utilizes PWM signals from the Raspberry Pi to modulate both speed and direction.
 For efficient performance and to stay within the L298N driver's safe operating limits, the motor's current draw is estimated to be less than 1.5A under typical load. While specific torque and RPM values are often custom to the supplier, the motor is generally rated for approximately 300 RPM at 9V and provides sufficient torque (estimated at ~ 5-10  kg ٠ cm) to manage the robot's mass and navigate the competition course
 ![motor](https://github.com/user-attachments/assets/062b6f21-24eb-441e-92e2-49b57b84d322)
 
-**Servo Motor**
+- **Servo Motor**
 
 Precise Steering Actuator
 The Servo Motor is the critical actuator responsible for translating the path-planning commands from the Raspberry Pi into physical steering motion.
@@ -163,7 +167,7 @@ Control Protocol: The servo angle is precisely controlled by sending Pulse Width
 Power: The servo requires a stable operating voltage typically in the 5V  -  6V range. This power is reliably supplied by the Step-down Module (Voltage Regulator), ensuring steady operation independent of the main 9V battery fluctuations
 ![servo motor](https://github.com/user-attachments/assets/6f7a34e5-0034-4c64-9280-5f6f9f28bb13)
 
-**voltage regulator XL4015**
+- **voltage regulator XL4015**
 
 The DC-DC Step-down Module is a non-isolated buck converter based on the widely used LM2596 integrated circuit. It serves as a crucial power conditioning component, managing the transition from the high-power drive system to the sensitive control electronics.
 1. Power Regulation Necessity
@@ -173,7 +177,7 @@ The primary function of this module is to safely and efficiently step-down the 9
 The module accepts a wide input range 4.5V to 40V), easily accommodating the 12V battery output. It is manually tuned to provide a precise 5V output voltage and is rated for a continuous output current of approximately 3A, providing a sufficient power budget for all low-power electronics in the system. The high conversion efficiency (> 80\%) minimizes energy loss as heat, preserving battery life
 <img width="634" height="444" alt="voltage regulator XL4015" src="https://github.com/user-attachments/assets/780b0bdf-d0de-46ae-a807-0672d56c7aa9" />
 
-**gyroscope MPU6050**
+- **gyroscope MPU6050**
 
 Inertial Measurement Unit (IMU): MPU-6050
 The MPU-6050 Inertial Measurement Unit (IMU) serves as the primary sensor for motion and orientation tracking, correcting for mechanical and environmental inaccuracies that cannot be managed by vision or distance sensors.
@@ -191,7 +195,7 @@ The IMU provides the core data for internal navigation (dead reckoning). Regardl
 ![j](https://github.com/user-attachments/assets/ee42bb96-c9a1-4cdc-b19b-56fb1aeb2d33)
 
 
-**Ultrasonic**
+- **Ultrasonic**
 
 Ultrasonic Sensors (HC-SR04): Comprehensive ToF Ranging System
 The robot is equipped with a total of four HC-SR04 Ultrasonic Sensors that form the primary short-range ranging system. These sensors provide the vehicle with echolocation capabilities, on par with how bats and dolphins locate objects in complete darkness and beneath the water surface. This array is fundamental for robust, real-time obstacle avoidance and precise navigation along the course boundaries.
@@ -208,4 +212,26 @@ The HC-SR04 module operates on the principle of measuring the Time-of-Flight (To
 Distance = Speed × Time, divided by two since the time measured is for the signal's round trip.
 The sensor boasts a practical measuring range of 2cm to 400cm and an accuracy that can reach 3mm. This combination of range and precision makes it perfectly suited for the short-range, dynamic obstacle avoidance challenges presented in the competition course
 ![Introduction-to-HC-SR04](https://github.com/user-attachments/assets/77b78609-52e6-4001-93a0-3b93dd555b82)
+
+
+- **switch**
+
+This switch controls the connection and disconnection of power between the battery and the robot. Since the rules require cutting off power before operation, we added this switch to comply with that. We soldered the red (positive) wire to the input side of the switch and another red wire to the output side. When the switch is turned on, power flows from the battery to the step-down module and then to the rest of the robot’s components
+![switch](https://github.com/user-attachments/assets/2f993690-e7aa-41dd-92d4-d6dc8d43ba04)
+
+### Robot 
+**This picture shows our robot in real life, displaying how it looks with all its components assembled**
+![2](https://github.com/user-attachments/assets/ba2e5261-6d83-489a-a7eb-884af5177500)
+
+***
+### Wiring Diagram and Power Distribution Diagram
+- **It shows you the connection of various components to the Raspberry Pi**
+![6](https://github.com/user-attachments/assets/4c8421e0-56f3-4bf7-9b27-8d39f5d2d489)
+
+- **It shows the ports of various components connected to the Raspberry Pi, as well as the voltage levels supplied to the Raspberry Pi and its connected components**
+![s](https://github.com/user-attachments/assets/76d82b49-d041-4ec6-86dd-2f69c3d83fa3)
+
+***
+
+# **Part 3: Obstacle Management**
 

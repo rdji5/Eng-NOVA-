@@ -117,7 +117,143 @@ We developed a work plan to organize our steps and manage tasks within the team.
 </p>
 
 # **Part 2: MECHANICAL DESIGN**
-### **First, an introduction to the parts of the robot**
+ ### **Firstly, the structure of the robot**
+- **This car is a self-assembled (DIY) model that is built on a metallic chassis and uses an Ackermann Steering system to simulate the motion of real cars
+The components of the car were connected and operated using a Raspberry Pi, programmed in Python to control movement and steering**
+
+**This is the chassis**
+
+![car](https://github.com/user-attachments/assets/e9da738f-8dcb-413c-9adc-34b0215bbf0a)
+
+<hr>
+</p>
+
+**Car size**
+
+![61TixKds-fL _AC_SL1200_](https://github.com/user-attachments/assets/2af9e034-c06c-4479-8742-9a26020d7f70)
+
+<hr>
+</p>
+
+- **This car is not a remote-controlled vehicle; rather, it is an experimental platform developed to apply the principles of mechanics, control, and programming in the field of intelligent vehicles.
+Thanks to the use of the Ackermann Steering system, the car replicates the actual steering mechanism of real vehicles, unlike the differential steering systems used in many traditional robots**
+- **The car was entirely assembled and programmed manually as part of participation in the Future Engineer competition, using the Raspberry Pi platform**
+
+<hr>
+</p>
+
+### **Ackermann Steering**
+
+- **This is the servo that controls the wheels using the Ackermann Steering system:**
+
+<img width="824" height="594" alt="servo" src="https://github.com/user-attachments/assets/8098b102-12a8-4a48-ade2-6cbb94b3886c" />
+
+Ackermann Steering Geometry: Precision Path Management
+The chassis design of our autonomous vehicle is fundamentally based on the Ackermann Steering Geometry. We implemented a custom-modified version of this linkage system to ensure optimal cornering performance.
+1. Principle of Operation
+Unlike simpler steering methods (like skid steering), the Ackermann principle ensures that during a turn, the steering axis of all four wheels intersects at a single, momentary center point. This is achieved by ensuring the inner wheel (the wheel closer to the turn’s center) rotates at a sharper angle than the outer wheel.
+This difference in rotation angle is critical because it forces the wheels to follow four distinct radii, allowing the inner wheel to travel a shorter path and the outer wheel a longer path, preventing any lateral slippage.
+In our RWD system, the front wheels execute the steering motion around their respective pivots, while the single DC motor drives the non-steering rear wheels.
+2. Mathematical Description (The Ideal Geometry)
+
+![Ackermann](https://github.com/user-attachments/assets/5d947b3d-9b4c-4ae5-8616-1f56afc65a02)
+
+This diagram illustrates the Ideal Ackerman 
+Steering Geometry. This geometry ensures that all four wheels, when steered, trace concentric circles around a single, common point, the Ackerman Center (C_a).
+This fundamental relationship is governed by the vehicle's fixed dimensions—the Track Width (T) and the Wheelbase (W)—and the required steering angles:
+cot(a_o) - cot(a_i) = T/W
+Where a\_i is the inner wheel steering angle and a\_o is the outer wheel steering angle.
+In this ideal setup:
+The Inner Wheel Angle (a\_i) is always greater than the Outer Wheel Angle (a\_o) (a\_i > a\_o).
+The lines drawn perpendicular to the plane of each wheel intersect precisely at C_a, ensuring all wheels roll without excessive side-slip.
+Note: Real-world steering systems use a Modified Ackerman principle to optimize performance across the entire steering range, deviating slightly from this ideal formula.
+
+3. Advantages for Our Robotic System:
+Implementing the Ackermann geometry was a strategic choice that provided several specific benefits essential for the competition requirements:
+Elimination of Tire Slippage: The main advantage is the prevention of tire scrubbing and slippage, which is crucial for accurate path following and maintaining maximum traction on the carpet surface.
+Precise Path Management: The system offers high control over the front wheel's angle, allowing for precise steering control necessary to navigate between colored obstacles and adhere to strict course boundaries.
+Single-Motor Compliance: This configuration naturally supports the requirement of using only a single DC motor for propulsion, simplifying the mechanical drivetrain while maintaining high maneuverability
+
+<hr>
+</p>
+
+- **Wheels**
+
+The wheels of this smart robot car have specific material and performance characteristics:
+Wheel Rims (Hubs): The rim material is ABS (Acrylonitrile Butadiene Styrene). They are purely aesthetic
+Tires (Rubber): The tire material is Rubber
+Performance: The rubber material provides a large coefficient of friction and strong grip (traction) force. This design is crucial for stable and controlled movement across different surfaces
+Internal Structure: All tires are internally fitted with a foam lining (insert). This foam insert provides necessary support and structure to the soft rubber tire, which is essential for consistent performance and shock absorption in RC and robot cars
+
+![61A1H6YRZoL _UF350,350_QL80_](https://github.com/user-attachments/assets/9068ce34-bb8c-4153-b0e0-9433e0bb5ad7)
+
+<hr>
+</p>
+
+- **Robot Car Gears**
+
+In our project, we replaced the large gears with smaller gears in the robot car to control its movement speed
+Gears are mechanical parts that transfer motion and rotation from the motor to the wheels, affecting both speed and torque
+By replacing the large gears with smaller ones, we were able to reduce the car's speed and increase control accuracy, especially when performing precise movements or working with the distance sensor and relay.
+- This modification helped make the car's movement more stable and safe, while maintaining the motor's power to drive the wheels smoothly
+
+<img width="927" height="352" alt="1" src="https://github.com/user-attachments/assets/2887284f-e565-4815-9ff5-6f3e8d6506ab" />
+
+***
+
+<img width="766" height="405" alt="part" src="https://github.com/user-attachments/assets/9ae0b720-7180-4fcb-bb56-5eafebaee228" />
+
+### 📦 Bill of Materials (BOM)
+
+| Part Name | Quantity | Description |
+|----------|---------|-------------|
+| Front metal chassis plate | 1 pcs | Front base for Ackermann steering system |
+| Rear metal chassis plate | 1 pcs | Rear base for motor mounting |
+| Electronics mounting plate | 1 pcs | Plate for Arduino / controller installation |
+| Rubber wheels | 4 pcs | High-traction rubber wheels |
+| Suspension spring | 1 pcs | Simple shock absorption system |
+| Motor/servo mounting bracket | 1 pcs | Holder for servo or steering mechanism |
+| Pulley / gear wheels | 2 pcs | Used in steering / drive linkage |
+| Metal rods | Several | Used for steering linkage and frame connection |
+| Bearings | Several | To reduce friction and improve smooth steering |
+| Rod ends / ball joints | 4 pcs | Steering linkage endpoints |
+| Servo mount brackets | 2 pcs | For attaching the steering servo |
+| Metal steering arm | 1 pcs | Transfers servo motion to the wheels |
+| Servo motor | 1 pcs | Controls front wheel steering |
+| Spacer washers | 4 pcs | To maintain spacing between plates |
+| Hex standoffs | Multiple | Structural support and spacing |
+| L-shaped brackets | 2 pcs | Support brackets for structure |
+| Screws (M2 / M3 assorted) | Set | Used for assembly |
+| Nuts (M2 / M3 assorted) | Set | Used with screws |
+| Metal shafts / pins | Multiple | For wheel/steering mechanism |
+| Bearings housings | 2 pcs | Mounting for wheel axles |
+| Plastic components | Several | Mechanical support parts |
+
+<hr>
+</p>
+
+### **Secondly, 3D model pieces**
+
+- We encountered an issue with the ultrasonic sensor readings due to instability during operation. To address this, we designed a custom 3D-printed mount to securely hold the sensor in place
+
+After implementing this design, the ultrasonic readings became significantly more stable and accurate
+
+The final design is shown below:
+<img width="996" height="830" alt="1 3d" src="https://github.com/user-attachments/assets/ca5e852a-dc85-4807-9777-395e310c0bf5" />
+
+<hr>
+</p>
+
+Similarly, we faced a challenge in determining the optimal placement for the camera. To solve this, we designed a special 3D-printed mount that allowed us to position the camera securely and achieve the desired angle for accurate image captur
+
+The final designs are shown below:
+
+Camera image 3D
+
+<hr>
+</p>
+
+### **Third, parts of the robot**
 - **Robot mind**
 
 The Raspberry Pi 4 Model B serves as the Main Processing Unit (MPU), acting as the robot’s central brain. It executes the complex Python code and coordinates all real-time sensory data and actuator commands.
@@ -151,9 +287,35 @@ Key Technical Data:
 
 - **Motor DC**
 
-The DC Geared Motor provides the necessary mechanical power to drive the Single-Motor Rear-Wheel Drive (RWD) system. This component is a standard 9V DC motor with an integrated gearbox . The gear reduction is critical; it increases the motor’s torque significantly while reducing the output RPM, providing the crucial force needed for propulsion and enabling precise speed control at lower velocities. The motor is directly controlled by the 9V power output from the L298N Motor Driver, which utilizes PWM signals from the Raspberry Pi to modulate both speed and direction.
-For efficient performance and to stay within the L298N driver's safe operating limits, the motor's current draw is estimated to be less than 1.5A under typical load. While specific torque and RPM values are often custom to the supplier, the motor is generally rated for approximately 300 RPM at 9V and provides sufficient torque (estimated at ~ 5-10  kg ٠ cm) to manage the robot's mass and navigate the competition course
+This motor belongs to the class of DC Geared Motors, specifically the JGA25-370 series, known for providing a necessary trade-off between speed and torque for robotics and automation applications. It is designed to be highly compatible with popular microcontroller platforms such as Arduino, Raspberry Pi, and STM32, utilizing common DC motor driver modules.
+- Model Name and Type: JGA25-370 DC Gear Motor. The name implies a 25mm gearbox diameter attached to a 370 series motor.
+- Operating Voltage: The nominal operating voltage is 12V DC.
+- Output Speed (No-load): It provides an output speed of 210RPM (Revolutions Per Minute) under no-load conditions.
+- Torque Capability: The motor delivers up to 12Kg • cm of torque. This makes it suitable for medium-load mechanical motion control projects.
+- Gearbox Material: It features a durable all-metal gearbox for enhanced strength and long service life, ensuring stable and reliable continuous operation.
+- Output Shaft: The typical output shaft diameter is 6mm.
+- Typical Applications: This motor is ideal for building robots, conveyor systems, smart vehicles, and other DIY projects requiring controlled motion.
+- Stall Current: The internal motor (before the gearbox) can draw a Stall Current (maximum current draw when the shaft is blocked) of approximately 2.2 Amps at 12V.
+- Motor Driver Requirement: This means the chosen motor driver (the module linking the motor to the Raspberry Pi) must have a continuous current rating exceeding 2.2 Amps per channel to safely operate the motor, especially when the car is starting or pushing against an obstacle.
+2.3.2) Encoder:
+    The motor comes integrated with an encoder to provide closed-loop control of speed and position, which is essential for precise robotic applications.
+1) Encoder Type and Output Signal:
+- The integrated encoder uses Hall Sensor technology.
+- It provides two square wave outputs, designated as Channel A and Channel B.
+- The signals are approximately 90° out of phase. This phase difference is crucial for determining the direction of rotation (quadrature encoding).
+- The voltage output of the Hall sensor signals ranges from 0V to Vdc (the encoder's supply voltage).
+3) Wiring and Physical Characteristics:
+- Leads: The encoder assembly is terminated by 6 color-coded leads.
+- Connector: These leads are typically terminated into a 6 female header with a 0.1''pitch (standard spacing).
+- Length: The lead length is approximately 15cm.
+- Mounting: The motor faceplate includes 2 mounting holes for M3 screws. The distance between these mounting holes is 18mm apart.
+4) Wire Function (Based on common JGA25-370 Encoders):
+- The 6 wires generally correspond to:
+1)	Two Wires (Motor): For the 12V motor power (e.g., Red/White or Red/Black).
+2)	Four Wires (Encoder): VCC (Encoder Power, usually 5V or 3.3V), GND, and the two signal lines (Channel A and Channel B).
 ![motor](https://github.com/user-attachments/assets/062b6f21-24eb-441e-92e2-49b57b84d322)
+![Encode](https://github.com/user-attachments/assets/803035f0-677a-4387-90a3-af9d1a6f99ce)
+
 
 - **Servo Motor**
 
@@ -176,6 +338,25 @@ The primary function of this module is to safely and efficiently step-down the 9
 2. Key Operational Data
 The module accepts a wide input range 4.5V to 40V), easily accommodating the 12V battery output. It is manually tuned to provide a precise 5V output voltage and is rated for a continuous output current of approximately 3A, providing a sufficient power budget for all low-power electronics in the system. The high conversion efficiency (> 80\%) minimizes energy loss as heat, preserving battery life
 <img width="634" height="444" alt="voltage regulator XL4015" src="https://github.com/user-attachments/assets/780b0bdf-d0de-46ae-a807-0672d56c7aa9" />
+
+- **Relay**
+
+A relay is an electronic component used to control the switching ON or OFF of electrical circuits using a small electrical signal from a microcontroller such as the Raspberry Pi
+The relay acts as an interface between low-voltage control circuits and high-voltage electrical loads
+It operates on the principle of electromagnetism, containing a copper coil (Coil) that creates a magnetic field when current passes through it. This magnetic field pulls a metal armature, changing the connection state between its internal terminals:
+- COM (Common): The common contact
+- NO (Normally Open): Open by default and closes when the relay is activated
+- NC (Normally Closed): Closed by default and opens when the relay is activated
+When a signal is sent from the microcontroller to the relay, current flows through the coil, generating a magnetic field that moves the metal armature. This action switches the connected circuit ON or OFF
+
+Relays are used to control devices that require higher current or voltage than the microcontroller can supply, such as:
+- Running motors and fans.
+- Turning lights or pumps on and off.
+- Cutting power in safety or smart control systems.
+Thus, the relay allows microcontrollers to safely and efficiently control high-power electrical systems without damaging sensitive electronic components
+
+![relay](https://github.com/user-attachments/assets/7b52c186-1589-4f6e-a9ce-07a3e6804454)
+
 
 - **gyroscope MPU6050**
 

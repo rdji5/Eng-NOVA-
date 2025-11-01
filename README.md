@@ -74,7 +74,7 @@ Our team works to distribute tasks in an organized manner that ensures the integ
 **Rasha Islam Al-Fakhouri**
 - From Hebron
 - 15 years old
-- My hobbies are reading, writing and storytelling
+- I love reading literature and philosophy, and I enjoy playing badminton
 - Responsible for technical and organizational aspects, participated in presenting changes in project structures, in addition to continuous follow-up between stops to clarify the overall vision
 - rashfakh9@gmail.com
 
@@ -125,6 +125,13 @@ The components of the car were connected and operated using a Raspberry Pi, prog
 
 ![car](https://github.com/user-attachments/assets/e9da738f-8dcb-413c-9adc-34b0215bbf0a)
 
+- Watch this video from the manufacturing source  [click here](https://www.youtube.com/watch?v=w_RRwR02S6U)
+
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=w_RRwR02S6U">
+  </a>
+</div>
+
 <hr>
 </p>
 
@@ -154,6 +161,7 @@ The chassis design of our autonomous vehicle is fundamentally based on the Acker
 Unlike simpler steering methods (like skid steering), the Ackermann principle ensures that during a turn, the steering axis of all four wheels intersects at a single, momentary center point. This is achieved by ensuring the inner wheel (the wheel closer to the turn’s center) rotates at a sharper angle than the outer wheel.
 This difference in rotation angle is critical because it forces the wheels to follow four distinct radii, allowing the inner wheel to travel a shorter path and the outer wheel a longer path, preventing any lateral slippage.
 In our RWD system, the front wheels execute the steering motion around their respective pivots, while the single DC motor drives the non-steering rear wheels.
+
 2. Mathematical Description (The Ideal Geometry)
 
 ![Ackermann](https://github.com/user-attachments/assets/5d947b3d-9b4c-4ae5-8616-1f56afc65a02)
@@ -168,14 +176,17 @@ The Inner Wheel Angle (a\_i) is always greater than the Outer Wheel Angle (a\_o)
 The lines drawn perpendicular to the plane of each wheel intersect precisely at C_a, ensuring all wheels roll without excessive side-slip.
 Note: Real-world steering systems use a Modified Ackerman principle to optimize performance across the entire steering range, deviating slightly from this ideal formula.
 
+
 3. Advantages for Our Robotic System:
 Implementing the Ackermann geometry was a strategic choice that provided several specific benefits essential for the competition requirements:
 Elimination of Tire Slippage: The main advantage is the prevention of tire scrubbing and slippage, which is crucial for accurate path following and maintaining maximum traction on the carpet surface.
 Precise Path Management: The system offers high control over the front wheel's angle, allowing for precise steering control necessary to navigate between colored obstacles and adhere to strict course boundaries.
 Single-Motor Compliance: This configuration naturally supports the requirement of using only a single DC motor for propulsion, simplifying the mechanical drivetrain while maintaining high maneuverability
-
-<hr>
-</p>
+Watch this video to understand the system [click here](https://www.youtube.com/watch?v=sF-PfAu50Fo)
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=sF-PfAu50Fo">
+  </a>
+</div>
 
 - **Wheels**
 
@@ -232,19 +243,107 @@ By replacing the large gears with smaller ones, we were able to reduce the car's
 <hr>
 </p>
 
+![71HcujKQaNL _AC_SL1500_](https://github.com/user-attachments/assets/f7be5660-cb13-4402-ad8d-7867f43b7131)
+
+- **Brass Hex Standoffs** 
+
+These brass hex standoffs are used to elevate and support the Raspberry Pi and other electronic components.
+They provide extra stability, improve airflow, and help organize the structure of the robot.
+We used them to raise the robot’s layers securely, and they come in different sizes depending on the design requirements.
+
+<hr>
+</p>
+
 ### **Secondly, 3D model pieces**
+
+- **3D machine**
+
+**Creality Ender 5S1**
+
+![Creality Ender 5S1](https://github.com/user-attachments/assets/c0de7cdd-aa2d-4eb0-91d3-47151be23150)
+
+The Ender-5 S1 is an FDM 3D printer with a stable cube-frame structure. It was designed to deliver better performance than previous models in the Ender series, offering faster and more responsive printing capabilities.
+It is considered a great option for hobbyists and medium-level prototyping, thanks to its advanced features such as motion acceleration, direct-drive extrusion, and automatic bed-leveling support
+
+#### General Specifications
+
+| Specification            | Value |
+|--------------------------|-------|
+| Build Volume             | 220 × 220 × 280 mm |
+| Nozzle Diameter          | 0.4 mm (standard) |
+| Hotend Type              | All-Metal |
+| Max Hot-End Temperature  | 300 °C |
+| Filament Diameter        | 1.75 mm |
+| Supported Filaments      | PLA, PETG, TPU, ABS, ASA |
+| Extruder Type            | Sprite Direct-Drive Dual Gear Extruder |
+| Max Printing Speed       | 250 mm/s |
+| Max Acceleration         | 2000 mm/s² |
+| Frame Type               | Cube-frame Cartesian |
+| Auto Bed Leveling        | CR-Touch |
+
+### Build Plate Specifications 
+
+| Specification               | Value                                                                 |
+|-----------------------------|-----------------------------------------------------------------------|
+| Build Plate Surface         | Spring steel sheet with PEI coating (magnetic flexible plate)        |
+| Build Plate Size            | 235 × 235 mm                                                          |
+| Max Build Plate Temperature | Up to 110 °C                                                          |
+| Heating Method              | AC/Heatbed (magnetic heated bed)                                     |
+| Compatibility               | Compatible with PC/PEI/Glass plates (optional upgrades available)    |
+
+### Tool Head Specifications 
+
+| Specification               | Value        |
+|-----------------------------|-------------|
+| Max Speed                   | 500 mm/s    |
+| Max Acceleration            | 20 m/s²     |
+
+### Physical Dimensions 
+
+| Specification      | Value                  |
+|--------------------|------------------------|
+| Printer Dimensions | 425 × 460 × 570 mm     |
+| Package Size       | 578 × 474 × 340 mm     |
+| Net Weight         | 12.2 kg                |
+| Gross Weight       | 14.7 kg                |
+
+### Electrical Requirements 
+
+| Specification       | Value              |
+|---------------------|--------------------|
+| Voltage             | 100–240 VAC        |
+| Frequency           | 50/60 Hz           |
+| Rated Power         | ~350W              |
+| Power Supply Output | 24V DC             |
+
+<hr>
+
+#### **Filament**: Polylactic Acid or simply known as **PLA**  
+![PLA_Family](https://github.com/user-attachments/assets/7bd5eb8a-3b57-4c67-a5d5-f70937c5c195)
+
+PLA (Polylactic Acid) is one of the most widely used filaments in 3D printing. It is a biodegradable thermoplastic derived from renewable resources such as cornstarch or sugarcane. PLA is favored for its ease of printing, low warping, and minimal odor, making it ideal for FDM (fused deposition modeling) 3D printers. This filament is best suited for prototyping, decorative items, and educational projects, offering good strength and surface finish.  
+
+**Diameter:** 0.75 mm  
+**Printer Compatibility:** Most FDM 3D printers, including Creality Ender-5 S1
+
+<hr><br>
 
 - We encountered an issue with the ultrasonic sensor readings due to instability during operation. To address this, we designed a custom 3D-printed mount to securely hold the sensor in place
 
 After implementing this design, the ultrasonic readings became significantly more stable and accurate
 
 The final design is shown below:
+<table align="center">
+  <tr>
+    <td align="center">
 <img width="996" height="830" alt="1 3d" src="https://github.com/user-attachments/assets/ca5e852a-dc85-4807-9777-395e310c0bf5" />
 
-<hr>
-</p>
+ <p><a href="https://github.com/rdji5/Eng-NOVA-/blob/main/3D%20model/Ultrasonic%20Holder%20(1).stl" target="_blank">Click here to view 3D model.</a></p>
+  </tr>
+</table>
 
-Similarly, we faced a challenge in determining the optimal placement for the camera. To solve this, we designed a special 3D-printed mount that allowed us to position the camera securely and achieve the desired angle for accurate image captur
+
+- Similarly, we faced a challenge in determining the optimal placement for the camera. To solve this, we designed a special 3D-printed mount that allowed us to position the camera securely and achieve the desired angle for accurate image captur
 
 The final designs are shown below:
 

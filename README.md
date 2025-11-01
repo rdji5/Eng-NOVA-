@@ -328,6 +328,8 @@ PLA (Polylactic Acid) is one of the most widely used filaments in 3D printing. I
 
 <hr><br>
 
+**Ultrasonic holder**
+
 - We encountered an issue with the ultrasonic sensor readings due to instability during operation. To address this, we designed a custom 3D-printed mount to securely hold the sensor in place
 
 After implementing this design, the ultrasonic readings became significantly more stable and accurate
@@ -342,12 +344,19 @@ The final design is shown below:
   </tr>
 </table>
 
-
+**Camera holder**
 - Similarly, we faced a challenge in determining the optimal placement for the camera. To solve this, we designed a special 3D-printed mount that allowed us to position the camera securely and achieve the desired angle for accurate image captur
 
 The final designs are shown below:
 
-Camera image 3D
+<table align="center">
+  <tr>
+    <td align="center">
+<img width="685" height="612" alt="camera" src="https://github.com/user-attachments/assets/ff868f99-5acc-427a-a83d-92cceeffbfef" />
+
+ <p><a href="https://github.com/rdji5/Eng-NOVA-/blob/main/3D%20model/Cameraa.stl" target="_blank">Click here to view 3D model.</a></p>
+  </tr>
+</table>
 
 <hr>
 </p>
@@ -509,9 +518,59 @@ This switch controls the connection and disconnection of power between the batte
 ![6](https://github.com/user-attachments/assets/4c8421e0-56f3-4bf7-9b27-8d39f5d2d489)
 
 - **It shows the ports of various components connected to the Raspberry Pi, as well as the voltage levels supplied to the Raspberry Pi and its connected components**
-![s](https://github.com/user-attachments/assets/76d82b49-d041-4ec6-86dd-2f69c3d83fa3)
+<img width="925" height="557" alt="7" src="https://github.com/user-attachments/assets/26daaefd-ef29-4e43-9512-6f1685e3db0e" />
+
 
 ***
 
 # **Part 3: Obstacle Management**
 
+## Open Challenge round
+
+In this stage, the robot is required to navigate the track for three complete laps, where the inner track walls are positioned randomly, all within a 3-minute time limit
+
+### **Open Challenge round (Youtube Link)**
+
+This video shows our robot completing the first round(Open Challenge), you can [click here]() to view the video we created.
+
+<div align="center">
+  <a href="">
+  </a>
+</div>
+
+### **The strategy**
+
+To navigate the initial stage intelligently, we developed a dedicated algorithm that empowered the robot to make autonomous directional decisions, Prior to encountering the first turn, the robot was in a state of uncertainty, unsure whether to proceed clockwise or counterclockwise
+
+We incorporated ultrasonic sensors into the robot’s design to provide it with continuous spatial awareness. These sensors measured the distance to nearby obstacles on both the left and right sides 
+
+**Left Sensor**: Conversely, if the right sensor measured a distance beyond 160 cm, the robot opted to move counterclockwise
+
+<table align="center">
+  <tr>
+    <td align="center">
+      <img width="685" height="612" alt="Counterclockwise" src="https://github.com/user-attachments/assets/a4255cc7-89bc-4cb5-acf7-a1210630334c" />
+      <p>This is the counterclockwise rotation of the robot.</p>
+    </td>
+  </tr>
+</table>
+
+
+**Right Sensor**: If the left ultrasonic sensor detected a distance exceeding 160 cm (indicating ample space on that side), the robot interpreted this as a signal to move clockwise
+
+<table align="center">
+  <tr>
+    <td align="center">
+      <img width="685" height="612" alt="Clockwise" src="https://github.com/user-attachments/assets/bd65084d-5bea-47d2-a92d-cef351460ef4" />
+      <p>This is the clockwise rotation of the robot.</p>
+    </td>
+  </tr>
+</table>
+
+<br><hr>
+
+### **Flowchart**
+
+![OpenChallenge](https://github.com/user-attachments/assets/6dca9022-0850-457c-abc6-37278b23cd26)
+
+<hr>

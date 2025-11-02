@@ -15,6 +15,11 @@
 
 `FlowChart` This folder includes flow diagrams that represent the logic and structure of the robot’s control system, showing how it interprets sensor data and executes movement decisions during tasks.
 
+`Mechanical parts` parts Contains all mechanical parts used in our robot
+
+`Problems`Documents the problems encountered during the project and their corresponding solutions.
+
+
 `Tables` This folder includes all the tables we used in our project, such as time plans, task schedules, and data organization charts.
 
 `Program` Contains all the code we wrote for the WRO 2024 Future Engineers and some charts that explain it.
@@ -24,6 +29,8 @@
 `Schemes`Drawings that show how the robot’s parts and wires are connected.
 
 `Team-Photos` This folder features photos of our team members participating in the WRO 2025 Future Engineers competition.
+
+`To him work` Explains how the robot works
 
 `Videos` Contains links to videos demonstrating how the robot performs and completes both missions successfully.
 

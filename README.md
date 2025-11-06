@@ -6,7 +6,12 @@
 <img width="1024" height="1024" alt="Nova symbol" src="https://github.com/user-attachments/assets/4c8e5975-c9d1-4472-8a33-4b9ffa8786b2" />
 </p>
 
+You can follow our team on social media to stay updated with our latest projects and achievements.
+We share behind-the-scenes moments, progress updates, and highlights from our journey in robotics and technology.
+Follow us on:
 
+- Instagram [click here](https://www.instagram.com/nova_engineer3?)
+- Facebook [click here](https://www.facebook.com/share/1Cu9dFqsgs/)
 
 # Content
 `3DModels` This folder has the robot’s 3D design and the final rendered version
@@ -449,20 +454,98 @@ The final designs are shown below:
 ### **Third, parts of the robot**
 - **Robot mind**
 
-The Raspberry Pi 4 Model B serves as the Main Processing Unit (MPU), acting as the robot’s central brain. It executes the complex Python code and coordinates all real-time sensory data and actuator commands.
-We selected the Raspberry Pi 4 for its high-performance quad-core Cortex-A72 processor (1.8GHz) and 64-bit architecture. This computational power is non-negotiable, as it provides the necessary capacity to simultaneously manage:
-- Computer Vision (CV): Processing real-time video frames from the USB Camera using the OpenCV library to detect and track colored obstacles.
-- Sensor Fusion: Rapidly integrating data from the IMU (Gyroscope) and the four Ultrasonic Sensors for path correction and obstacle avoidance.
-- In compliance with competition rules, the code is loaded onto the Raspberry Pi prior to the start. The entire autonomous routine is initiated by a physical push button connected to a GPIO pin, which activates the main Python script.
+### 🔹 Raspberry Pi 4 — Main Processing Unit (MPU)
+
+The **Raspberry Pi 4 Model B** serves as the **Main Processing Unit (MPU)**, acting as the robot’s central brain.  
+It executes the complex Python code and coordinates all real-time sensory data and actuator commands.
+
+We selected the **Raspberry Pi 4** for its **quad-core Arm Cortex-A72 processor (1.8 GHz)** and **64-bit architecture**, providing a reliable balance between performance and efficiency for real-time robotic applications.  
+
+Its computational power enables the system to simultaneously handle:  
+
+- **Computer Vision (CV):** Processing real-time video frames from the USB camera using the OpenCV library to detect and track colored obstacles.  
+- **Sensor Fusion:** Integrating data from the IMU (gyroscope) and the ultrasonic sensors for path correction and obstacle avoidance.  
+- **Peripheral Control:** Managing multiple modules such as relays, motors, and sensors through the GPIO interface with stable performance.  
+
+In compliance with competition rules, the code is **preloaded onto the Raspberry Pi 4** before the start.  
+The autonomous routine is initiated by a **physical push button** connected to a GPIO pin, which activates the main Python script.  
+
+---
+
+**References:**  
+- [Raspberry Pi 4 Product Brief (Official Datasheet)](https://datasheets.raspberrypi.com/rpi4/raspberry-pi-4-product-brief.pdf)  
+- [RaspberryTips — Raspberry Pi 4 Review](https://raspberrytips.com/raspberry-pi-4-overview/)
+
+
+  
 <!-- Robot Mind Image -->
 <table align="center">
   <tr>
     <td align="center">
       <img width="685" height="612" alt="Robot mind" src="https://github.com/user-attachments/assets/7df9a525-2814-4c7d-b86d-4e2bccb98d24" />
-      <p><b>Robot Mind</b>
+      <p><b>Raspberry Pi 4 </b>
     </td>
   </tr>
 </table>
+
+
+###  Raspberry Pi 5 — Main Processing Unit (MPU)
+
+The **Raspberry Pi 5** serves as the **Main Processing Unit (MPU)**, acting as the robot’s central brain.  
+It executes the complex Python code and coordinates all real-time sensory data and actuator commands.
+
+We selected the **Raspberry Pi 5** for its **high-performance quad-core Arm Cortex-A76 processor (2.4 GHz)** and **64-bit architecture**, delivering approximately **2×–3× the CPU performance** of the previous generation.  
+
+Its computational power is essential, providing the necessary capacity to simultaneously manage:  
+
+- **Computer Vision (CV):** Processing real-time video frames from the USB camera using the OpenCV library to detect and track colored obstacles.  
+- **Sensor Fusion:** Rapidly integrating data from the IMU (gyroscope) and the four ultrasonic sensors for path correction and obstacle avoidance.  
+- **High-Speed I/O:** Equipped with the new **RP1 I/O controller (south-bridge)**, offering improved USB and storage throughput to ensure minimal latency in peripheral responses.  
+
+In compliance with competition rules, the code is **preloaded onto the Raspberry Pi 5** before the start.  
+The entire autonomous routine is initiated by a **physical push button** connected to a GPIO pin, which activates the main Python script.  
+
+---
+
+**References:**  
+- [Raspberry Pi 5 Product Brief (Official Datasheet)](https://datasheets.raspberrypi.com/rpi5/raspberry-pi-5-product-brief.pdf)  
+- [RaspberryTips — Raspberry Pi 5 Performance Overview](https://raspberrytips.com/raspberry-pi-5-review/)
+
+<!-- Raspberry Pi 5 Image -->
+<table align="center">
+  <tr>
+    <td align="center">
+      <img width="685" height="612" alt="Raspberry Pi" src="https://github.com/user-attachments/assets/640b5539-9801-417c-b677-371f351eb611" />
+      <p><b>Raspberry Pi 5 </b>
+  </tr>
+</table>
+
+
+
+
+###  Raspberry Pi 4 vs Raspberry Pi 5 Comparison
+
+| Feature | Raspberry Pi 4 Model B | Raspberry Pi 5 |
+|----------|------------------------|----------------|
+| **Processor** | Quad-core ARM Cortex-A72 @ 1.8 GHz | Quad-core ARM Cortex-A76 @ 2.4 GHz |
+| **Architecture** | 64-bit | 64-bit |
+| **CPU Performance** | Baseline | ~2×–3× faster than Pi 4 |
+| **GPU** | VideoCore VI | VideoCore VII (improved graphics performance) |
+| **RAM Options** | 2GB, 4GB, 8GB LPDDR4 | 4GB or 8GB LPDDR4X |
+| **Storage** | microSD card | microSD card + PCIe 2.0 (via FPC connector) |
+| **USB Ports** | 2 × USB 3.0, 2 × USB 2.0 | 2 × USB 3.0, 2 × USB 2.0 (faster bus) |
+| **GPIO** | 40-pin header | 40-pin header (same pinout) |
+| **Networking** | Gigabit Ethernet, Wi-Fi 5, Bluetooth 5.0 | Gigabit Ethernet, Wi-Fi 5, Bluetooth 5.0 |
+| **Video Output** | 2 × micro HDMI (4K @ 60 fps) | 2 × micro HDMI (dual 4K @ 60 fps) |
+| **I/O Controller** | USB controller integrated on main SoC | Dedicated RP1 I/O controller (higher bandwidth) |
+| **Power Connector** | USB-C (5 V / 3 A) | USB-C (5 V / 5 A, higher current support) |
+| **Operating Temperature** | 0 – 50 °C | 0 – 50 °C (improved thermal management) |
+| **Launch Year** | 2019 | 2023 |
+
+---
+
+**Summary:**  
+Raspberry Pi 5 delivers **significantly higher CPU and GPU performance**, improved **I/O speed**, and **better responsiveness** — making it ideal for robotics, computer vision, and real-time control applications.
 
 - **Motor Driver L298N**
 
@@ -715,27 +798,30 @@ This switch controls the connection and disconnection of power between the batte
 
 # **Part 3: Obstacle Management**
 
-## Open Challenge round
+#  Open Challenge
 
-In this stage, the robot is required to navigate the track for three complete laps, where the inner track walls are positioned randomly, all within a 3-minute time limit
+##  Role of the Distance Sensor
 
-### **Open Challenge round (Youtube Link)**
+To navigate the initial stage intelligently, we developed a dedicated algorithm that empowered the robot to make **autonomous directional decisions**.  
+Before encountering the first turn, the robot was uncertain whether to proceed **clockwise** or **counterclockwise**.
 
-This video shows our robot completing the first round(Open Challenge), you can [click here](https://www.youtube.com/watch?v=wE9Jfp3p2G0) to view the video we created.
+We incorporated **ultrasonic sensors** into the robot’s design to provide continuous **spatial awareness**. These sensors measured the distance to nearby obstacles on both the **left** and **right** sides.
 
-<div align="center">
-  <a href="">
-  </a>
-</div>
+###  Sensor Logic
+- **Left Sensor:**  
+  If the right sensor measured a distance **greater than 160 cm**, the robot decided to move **counterclockwise**.
+  <table align="center">
+  <tr>
+    <td align="center">
+      <img width="685" height="612" alt="Clockwise" src="https://github.com/user-attachments/assets/bd65084d-5bea-47d2-a92d-cef351460ef4" />
+      <p>This is the clockwise rotation of the robot.</p>
+    </td>
+  </tr>
+</table>
 
-### **The strategy**
-
-To navigate the initial stage intelligently, we developed a dedicated algorithm that empowered the robot to make autonomous directional decisions, Prior to encountering the first turn, the robot was in a state of uncertainty, unsure whether to proceed clockwise or counterclockwise
-
-We incorporated ultrasonic sensors into the robot’s design to provide it with continuous spatial awareness. These sensors measured the distance to nearby obstacles on both the left and right sides 
-
-**Left Sensor**: Conversely, if the right sensor measured a distance beyond 160 cm, the robot opted to move counterclockwise
-
+- **Right Sensor:**  
+  If the left ultrasonic sensor detected a distance **greater than 160 cm** (indicating open space on that side), the robot chose to move **clockwise**.
+  
 <table align="center">
   <tr>
     <td align="center">
@@ -745,22 +831,70 @@ We incorporated ultrasonic sensors into the robot’s design to provide it with 
   </tr>
 </table>
 
+##  Path Stability
+While traveling in a straight path, the robot maintained a **safety buffer of 20 cm** from the inner wall.  
+If this distance was violated, the system automatically **adjusted its trajectory** to stay stable and balanced.
 
-**Right Sensor**: If the left ultrasonic sensor detected a distance exceeding 160 cm (indicating ample space on that side), the robot interpreted this as a signal to move clockwise
+This algorithm allowed the robot to **dynamically adapt** to its surroundings — making intelligent path choices and real-time corrections, simulating a level of **spatial awareness** similar to advanced autonomous systems.
 
+##  Lap Counting Logic
+Each time the robot detected a **corner** and a **large distance (~160 cm)**, it increased its lap counter.  
+After completing **12 laps** (where **1 round = 4 corners**), the robot automatically stopped at a **specific location**, marking the completion of the task.
+
+## **Open Challenge round (Youtube Link)**
+
+This video shows our robot completing the first round(Open Challenge), you can [click here](https://www.youtube.com/watch?v=wE9Jfp3p2G0) to view the video we created.
+
+
+## **Flowchart**
+
+![OpenChallenge](https://github.com/user-attachments/assets/1ad246c8-e44c-435f-a1cd-5e04cc7b8b49)
+
+<hr>
+
+#  Obstacle Challenge
+
+##  Navigation Strategy
+
+In this challenge, the robot is required to complete **three full laps** around a track containing **randomly placed red and green traffic signs**.  
+Each traffic sign acts as a visual cue guiding the robot’s movement along the track.
+
+###  Traffic Sign Interpretation
+- ** Red Sign:** The robot must stay on the **right** side of the lane.  
+
+<!-- Red Line Image -->
 <table align="center">
   <tr>
     <td align="center">
-      <img width="685" height="612" alt="Clockwise" src="https://github.com/user-attachments/assets/bd65084d-5bea-47d2-a92d-cef351460ef4" />
-      <p>This is the clockwise rotation of the robot.</p>
+      <img width="707" height="777" alt="Red Line" src="https://github.com/user-attachments/assets/f23955d6-f78e-478e-bb80-df1394df7a62" />
+      <p><b>Red Sign Line</b> 
     </td>
   </tr>
 </table>
 
-<br><hr>
 
-### **Flowchart**
+- ** Green Sign:** The robot must stay on the **left** side of the lane.
+  
+<!-- Green Line Image -->
+<table align="center">
+  <tr>
+    <td align="center">
+      <img width="778" height="730" alt="Green Line" src="https://github.com/user-attachments/assets/44c8d4e4-c66e-4436-b669-b7941002d529" />
+      <p><b>Green Sign</b> 
+    </td>
+  </tr>
+</table>
 
-![OpenChallenge](https://github.com/user-attachments/assets/3c439782-7f84-4bdf-8458-839d14441c1a)
 
-<hr>
+##  Rules and Constraints
+- The robot must **not move or displace any traffic signs** during the run.  
+- After completing the three laps, the robot must **locate a parking space** and perform **parallel parking** correctly.  
+
+##  Final Objective
+- Demonstrate the robot’s ability to **detect signs and make accurate decisions in real time**.  
+- Maintain **stable and precise movement** while following all track rules.
+
+
+## **Flowchart**
+
+![ObstecleChallenge](https://github.com/user-attachments/assets/8bf559c9-5410-4cdd-b0cf-885862b8d168)

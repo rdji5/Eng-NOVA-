@@ -1,0 +1,35 @@
+import RPi.GPIO as GPIO
+import time
+import smbus
+
+# Motor Pins
+MOTOR_IN3 = 38
+MOTOR_IN4 = 32
+
+# Servo Pin
+SERVO_PIN = 37
+
+# Ultrasonic Sensor Pins
+FRONT_TRIG = 13
+FRONT_ECHO = 11
+RIGHT_TRIG = 31
+RIGHT_ECHO = 29
+LEFT_TRIG = 10
+LEFT_ECHO = 8
+
+# Servo Angles
+SERVO_STRAIGHT = 60
+SERVO_RIGHT = 95
+SERVO_LEFT = 10
+
+# MPU6050 Address
+MPU6050_ADDR = 0x68
+bus = smbus.SMBus(1)
+
+# Distance thresholds (cm)
+DETECTION_DISTANCE = 80
+DIRECTION_CHECK_DISTANCE = 360
+
+# Movement Timing (seconds)
+TURN_DURATION = 1.1
+STRAIGHT_AFTER_TURN = 1.5

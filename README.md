@@ -16,6 +16,8 @@ Follow us on:
 # Content
 `3DModels` This folder has the robot’s 3D design and the final rendered version
 
+`Car Pictures` This folder contains images of the robot car captured from six different angles, providing a complete visual overview of its design and structure
+
 `Document (PDF form)` Includes a short document with project info from GitHub, saved as a PDF for A4 printing
 
 `FlowChart` This folder includes flow diagrams that represent the logic and structure of the robot’s control system, showing how it interprets sensor data and executes movement decisions during tasks.
@@ -44,8 +46,9 @@ Follow us on:
   - [About Us](#part-1-about-us)
   - [Mechanical Design](#part-2-mechanical-design)
   - [Obstacle Management](#part-3-obstacle-management)
+  - [Python Programming and Libraries](#python-programming-and-libraries)
 
-
+    
 <p align="center">
 
 # **Part 1: About Us**
@@ -852,9 +855,356 @@ This video shows our robot completing the first round(Open Challenge), you can [
 
 ![OpenChallenge](https://github.com/user-attachments/assets/1ad246c8-e44c-435f-a1cd-5e04cc7b8b49)
 
+***
+## **Source Code**
+
+- **Section 1 [Open Challenge round]**
+
+
+**Basic Import and Initialization**
+
+```python
+import RPi.GPIO as GPIO
+import time
+import smbus
+
+# Motor Pins
+MOTOR_IN3 = 38
+MOTOR_IN4 = 32
+
+# Servo Pin
+SERVO_PIN = 37
+
+# Ultrasonic Sensor Pins
+FRONT_TRIG = 13
+FRONT_ECHO = 11
+RIGHT_TRIG = 31
+RIGHT_ECHO = 29
+LEFT_TRIG = 10
+LEFT_ECHO = 8
+
+# Servo Angles
+SERVO_STRAIGHT = 60
+SERVO_RIGHT = 95
+SERVO_LEFT = 10
+
+# MPU6050 Address
+MPU6050_ADDR = 0x68
+bus = smbus.SMBus(1)
+
+# Distance thresholds (cm)
+DETECTION_DISTANCE = 80
+DIRECTION_CHECK_DISTANCE = 360
+
+# Movement Timing (seconds)
+TURN_DURATION = 1.1
+STRAIGHT_AFTER_TURN = 1.5
+```
+
+**Explanation:**
+This section imports the essential libraries to control the robot, defines the GPIO pins connected to the Raspberry Pi for motors, servo, and ultrasonic sensors, sets the three servo angles, and establishes the distance thresholds.
+These thresholds indicate when an obstacle is close enough to require stopping or detecting the path direction (clockwise or counterclockwise).
+It also initializes communication with the MPU6050 for orientation tracking and sets basic timing values for movement and turns.
+
+- **Section 2 [Open Challenge round]**
+
+**GPIO, MPU6050, and Ultrasonic Initialization**
+
+```python
+def setup_gpio():
+    GPIO.setmode(GPIO.BOARD)
+    GPIO.setwarnings(False)
+    
+    # Setup motor and servo pins
+    GPIO.setup(MOTOR_IN3, GPIO.OUT)
+    GPIO.setup(MOTOR_IN4, GPIO.OUT)
+    GPIO.setup(SERVO_PIN, GPIO.OUT)
+    
+    # Setup ultrasonic sensor trigger pins
+    for trig in [FRONT_TRIG, RIGHT_TRIG, LEFT_TRIG]:
+        GPIO.setup(trig, GPIO.OUT)
+        GPIO.output(trig, False)
+    
+    # Setup ultrasonic sensor echo pins
+    for echo in [FRONT_ECHO, RIGHT_ECHO, LEFT_ECHO]:
+        GPIO.setup(echo, GPIO.IN)
+
+def mpu6050_init():
+    try:
+        bus.write_byte_data(MPU6050_ADDR, 0x6B, 0)
+        time.sleep(0.1)
+        return True
+    except:
+        return False
+```
+
+**Explanation:**
+setup_gpio() configures the Raspberry Pi GPIO pins for motors, servo, and ultrasonic sensors. Trigger pins are outputs and echo pins are inputs.
+mpu6050_init() initializes the MPU6050 sensor to enable orientation tracking.
+These steps prepare the robot’s hardware for autonomous navigation and obstacle detection.
+
+- **Section 3 [Open Challenge round]**
+
+**Motor Control**
+
+```python
+def motor_forward():
+    GPIO.output(MOTOR_IN3, GPIO.LOW)
+    GPIO.output(MOTOR_IN4, GPIO.HIGH)
+
+def motor_stop():
+    GPIO.output(MOTOR_IN3, GPIO.LOW)
+    GPIO.output(MOTOR_IN4, GPIO.LOW)
+```
+
+**Explanation:**
+motor_forward() makes the robot move forward by setting the motor pins appropriately.
+motor_stop() stops the robot by turning off both motor pins.
+These functions provide basic motor control needed for autonomous navigation.
+
+
+- **Section 4 [Open Challenge round]**
+
+**Servo Control**
+
+```python
+def setup_servo():
+    global servo_pwm
+    servo_pwm = GPIO.PWM(SERVO_PIN, 50)
+    servo_pwm.start(0)
+    time.sleep(0.1)
+
+def set_servo_angle(angle):
+    duty = 2.5 + (angle / 180.0) * 10
+    servo_pwm.ChangeDutyCycle(duty)
+    time.sleep(0.3)
+    servo_pwm.ChangeDutyCycle(0)
+
+def steer_straight():
+    set_servo_angle(SERVO_STRAIGHT)
+
+def steer_left():
+    set_servo_angle(SERVO_LEFT)
+
+def steer_right():
+    set_servo_angle(SERVO_RIGHT)
+```
+    
+**Explanation:**
+setup_servo() initializes the servo motor for steering.
+set_servo_angle(angle) sets the servo to a specific angle.
+steer_straight(), steer_left(), and steer_right() position the servo to go straight, left, or right.
+These functions allow precise steering control for autonomous navigation.
+
+
+- **Section 5 [Open Challenge round]**
+
+**Ultrasonic Sensor Distance Reading**
+
+```python
+def get_distance(trig_pin, echo_pin):
+    GPIO.output(trig_pin, True)
+    time.sleep(0.00001)
+    GPIO.output(trig_pin, False)
+
+    timeout = time.time()
+    
+    while GPIO.input(echo_pin) == 0:
+        pulse_start = time.time()
+        if pulse_start - timeout > 0.1:
+            return -1
+
+    while GPIO.input(echo_pin) == 1:
+        pulse_end = time.time()
+        if pulse_end - pulse_start > 0.1:
+            return -1
+
+    pulse_duration = pulse_end - pulse_start
+    distance = pulse_duration * 17150
+    distance = round(distance, 1)
+
+    return distance if distance < 400 else -1
+
+def get_front_distance():
+    return get_distance(FRONT_TRIG, FRONT_ECHO)
+
+def get_right_distance():
+    return get_distance(RIGHT_TRIG, RIGHT_ECHO)
+
+def get_left_distance():
+    return get_distance(LEFT_TRIG, LEFT_ECHO)
+```
+
+**Explanation:**
+These functions read distances using ultrasonic sensors.
+get_distance(trig_pin, echo_pin) sends a pulse and calculates the time it takes to receive the echo, converting it into distance in centimeters.
+get_front_distance(), get_right_distance(), and get_left_distance() return the distances from the respective sensors.
+This allows the robot to detect obstacles and measure the space around it for autonomous navigation.
+
+
+- **Section 6 [Open Challenge round]**
+
+**Direction Detection Logic**
+
+```python
+def detect_direction():
+    left_readings = []
+    right_readings = []
+    
+    for i in range(10):
+        left = get_left_distance()
+        right = get_right_distance()
+        
+        if left > 0:
+            left_readings.append(left)
+        if right > 0:
+            right_readings.append(right)
+        
+        time.sleep(0.1)
+
+    avg_left = sum(left_readings) / len(left_readings) if left_readings else 0
+    avg_right = sum(right_readings) / len(right_readings) if right_readings else 0
+
+    if avg_left > DIRECTION_CHECK_DISTANCE:
+        return 'CCW'  # Counter-clockwise
+    elif avg_right > DIRECTION_CHECK_DISTANCE:
+        return 'CW'   # Clockwise
+    else:
+        return 'CCW' if avg_left > avg_right else 'CW'
+```
+
+**Explanation:**
+detect_direction() uses multiple ultrasonic readings from the left and right sensors to determine the robot's optimal turning direction.
+If left side > 360 cm → move counter-clockwise (CCW).
+If right side > 360 cm → move clockwise (CW).
+If both < 360 cm → choose the side with more space.
+This ensures the robot selects the safest and widest path during autonomous navigation.
+
+- **Section 7 [Open Challenge round]**
+
+**90-Degree Turn Function**
+
+```python
+def turn_90(turn_right):
+    if turn_right:
+        steer_right()
+    else:
+        steer_left()
+    
+    motor_forward()
+    time.sleep(TURN_DURATION)
+    steer_straight()
+```
+
+**Explanation:**
+turn_90(turn_right) performs a 90-degree turn
+If turn_right is True, the robot turns right; otherwise, it turns left.
+The function moves the robot forward while turning, waits for the specified TURN_DURATION, and then resets the steering to straight.
+This allows precise cornering during autonomous navigation.
+
+
+- **Section 8 [Open Challenge round]**
+
+**Navigation Logic**
+
+```python
+def navigate():
+    global sections_completed, direction, running
+    
+    motor_forward()
+    steer_straight()
+
+    while running and sections_completed < TOTAL_SECTIONS:
+        front_dist = get_front_distance()
+        
+        if front_dist <= DETECTION_DISTANCE and front_dist > 0:
+            motor_stop()
+            
+            if direction is None:
+                # First time detecting obstacle: wait 2 seconds and detect direction
+                time.sleep(2)
+                direction = detect_direction()
+            else:
+                # Subsequent times: short wait
+                time.sleep(0.1)
+```
+
+**Explanation:**
+- navigate() handles the robot's forward movement and obstacle detection.
+- The robot moves forward and keeps steering straight.
+- If an obstacle is detected within 80 cm (DETECTION_DISTANCE), the robot stops.
+- On the first detection, it waits 2 seconds and determines the turning direction.
+- On subsequent detections, it only pauses briefly (0.1 seconds)
+- This logic allows safe and intelligent navigation around obstacles during the Open Challenge.
+
+- **Section 9 [Open Challenge round]**
+
+**Post-Obstacle Navigation and Completion**
+
+```python
+if direction == 'CW':
+    turn_90(True)
+else:
+    turn_90(False)
+
+motor_forward()
+steer_straight()
+time.sleep(STRAIGHT_AFTER_TURN)
+
+sections_completed += 1
+
+else:
+    motor_forward()
+    steer_straight()
+
+time.sleep(0.05)
+
+motor_stop()
+steer_straight()
+time.sleep(0.5)
+running = False
+```
+**Explanation:**
+After detecting a direction, the robot executes a 90-degree turn (turn_90) depending on whether it should go clockwise or counter-clockwise.
+It then moves forward for 1.5 seconds (STRAIGHT_AFTER_TURN) to continue on the path.
+- If no obstacles are detected, the robot simply continues straight with small adjustments.
+-The sections_completed counter increases with each segment.
+Once 24 sections are completed, the robot stops, resets steering, and ends the run.
+This logic ensures the robot navigates through all track sections safely and autonomously.
+
+- **Section 10 [Open Challenge round]**
+
+**Main Function — Setup and Start**
+
+```python
+def main():
+    global running
+    
+    try:
+        # Initialize hardware
+        setup_gpio()
+        setup_servo()
+        mpu6050_init()
+        time.sleep(0.5)
+        
+        # Reset steering and stop motors
+        steer_straight()
+        motor_stop()
+        
+        # Start navigation
+        running = True
+        navigate()
+```
+
+**Explanation:**
+The main() function prepares all hardware components and starts the Open Challenge.
+- GPIO, servo, and MPU6050 are initialized.
+- Steering is set straight and motors are stopped before starting.
+- The navigate() function is called to begin autonomous movement and obstacle handling.
+This ensures the robot is fully ready before starting the challenge.
+
 <hr>
 
-#  Obstacle Challenge
 
 ##  Navigation Strategy
 
@@ -900,3 +1250,178 @@ Each traffic sign acts as a visual cue guiding the robot’s movement along the 
 ## **Flowchart**
 
 ![ObstecleChallenge](https://github.com/user-attachments/assets/8bf559c9-5410-4cdd-b0cf-885862b8d168)
+
+<hr>
+
+## **Source Code**
+
+- **Section 1 [Obstacle Challenge round]**
+
+**Color Detection with Camera (LAB-based)**
+
+```python
+import cv2
+import numpy as np
+
+def normalize_color(frame):
+    """Gray world color normalization to reduce lighting effect"""
+    result = frame.astype(np.float32)
+    avg_b = np.mean(result[:, :, 0])
+    avg_g = np.mean(result[:, :, 1])
+    avg_r = np.mean(result[:, :, 2])
+    avg_gray = (avg_b + avg_g + avg_r) / 3
+
+    result[:, :, 0] = np.minimum(result[:, :, 0] * (avg_gray / avg_b), 255)
+    result[:, :, 1] = np.minimum(result[:, :, 1] * (avg_gray / avg_g), 255)
+    result[:, :, 2] = np.minimum(result[:, :, 2] * (avg_gray / avg_r), 255)
+
+    return result.astype(np.uint8)
+
+# Initialize camera (USB or Pi camera)
+camera = cv2.VideoCapture(0)
+camera.set(3, 640)
+camera.set(4, 480)
+
+while True:
+    ret, frame = camera.read()
+    if not ret:
+        break
+
+    # Optional: normalize to reduce color cast from lighting
+    frame = normalize_color(frame)
+
+    # Convert BGR to LAB
+    lab = cv2.cvtColor(frame, cv2.COLOR_BGR2LAB)
+    L, A, B = cv2.split(lab)
+
+    # --- Detect RED (A-channel is high for red) ---
+    red_mask = cv2.inRange(A, 150, 255)   # high A → red
+    green_mask = cv2.inRange(A, 0, 110)   # low A → green
+
+    # Clean up noise
+    kernel = np.ones((5, 5), np.uint8)
+    red_mask = cv2.morphologyEx(red_mask, cv2.MORPH_OPEN, kernel)
+    green_mask = cv2.morphologyEx(green_mask, cv2.MORPH_OPEN, kernel)
+
+    # Find contours for red
+    contours_red, _ = cv2.findContours(red_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+    for c in contours_red:
+        area = cv2.contourArea(c)
+        if area > 400:
+            x, y, w, h = cv2.boundingRect(c)
+            cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 0, 255), 2)
+            cv2.putText(frame, "RED", (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 255), 2)
+
+    # Find contours for green
+    contours_green, _ = cv2.findContours(green_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+    for c in contours_green:
+        area = cv2.contourArea(c)
+        if area > 400:
+            x, y, w, h = cv2.boundingRect(c)
+            cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
+            cv2.putText(frame, "GREEN", (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 0), 2)
+
+    # Display the output
+    cv2.imshow("Color Detection (LAB-based)", frame)
+
+    if cv2.waitKey(1) & 0xFF == 27:  # ESC key to exit
+        break
+
+camera.release()
+cv2.destroyAllWindows()
+```
+
+**Explanation:**
+
+- The camera captures frames in real-time and normalizes the colors to reduce lighting effects.
+- Conversion to LAB color space helps separate luminance from color, improving red and green detection.
+- Red and green masks are created using the A-channel of LAB.
+- Morphological operations remove small noise.
+- Contours are detected for each color, and bounding rectangles with labels (“RED” or “GREEN”) are drawn.
+- The live frame shows the detected objects, updating in real-time.
+- Press ESC to exit the program.
+
+# **Python Programming and Libraries**
+# 1.1 Python Language and Libraries Used in Our WRO Robot
+
+## Python Language
+We chose **Python** as the main programming language for our WRO robot because it is simple, powerful, and widely used in robotics and computer vision. Python allows us to write clear and organized code, making it easier to test, debug, and improve our program.  
+
+One of the main reasons we selected Python is its strong support for the **OpenCV** library, which we used to process images and recognize objects or patterns. OpenCV gave us the ability to detect lines, colors, and QR codes — features that were essential for our robot’s mission.  
+
+Python also works perfectly with **Raspberry Pi**, which we used as the main controller. Its flexibility allowed us to easily connect sensors and motors, and integrate the results from OpenCV to make real-time decisions.  
+
+Using Python helped us focus on problem-solving and teamwork, since the language is easy to understand and modify. Overall, Python and OpenCV together provided a powerful combination that made our robot more intelligent and efficient during the WRO challenge.  
+
+Python is used in our project because it is easy to learn and helps us control the robot accurately. With Python, we can program the robot’s movements, read sensor data, and analyze images from the camera. It also supports powerful libraries like **OpenCV**, **NumPy**, and more, which help us complete tasks quickly and efficiently during the competition challenges.
+
+---
+
+## RPi.GPIO Library
+The **RPi.GPIO** library is specifically designed to interact directly with the physical world through the general-purpose input/output pins on the Raspberry Pi. Imported here as `GPIO`, its primary function is to manage the flow of digital signals.  
+
+- You can set a pin as an **output** to send a High (1) or Low (0) signal, controlling devices like LEDs, motors, and actuators (turning them ON or OFF).  
+- Conversely, you can set a pin as an **input** to read the state of physical components, such as checking whether a button has been pressed or if a sensor has detected an object.  
+
+This library forms the foundational layer for **low-level hardware control**.
+
+---
+
+## OpenCV Library
+**OpenCV** is a powerful and widely used library for computer vision tasks. In our WRO project, we use OpenCV to help the robot understand its surroundings through camera input.  
+
+- It allows the robot to **detect colors**, **follow lines**, and **recognize objects or obstacles**.  
+- OpenCV works well with Python and provides many ready-to-use functions that make image processing faster and easier.  
+
+This helps improve the robot’s **accuracy** and **responsiveness** during competition challenges.
+
+---
+
+## time Library
+The **time** library is a standard module built into Python that provides essential functions for managing time within a program. It is crucial for hardware projects, as physical devices often require specific timing to operate correctly.  
+
+- Its most common function is `time.sleep(X)`, which pauses the execution of the program for a specified number of seconds (X).  
+- This delay is vital for tasks like creating rhythmic flashing patterns, allowing mechanical components time to move into position, or stabilizing sensor readings before processing them.  
+- The library also offers functions for measuring time intervals and retrieving the current time.
+
+---
+
+## smbus Library
+The **smbus** library serves as a software interface for communicating with external devices using the **I²C (Inter-Integrated Circuit)** protocol, a very common serial communication method in embedded systems.  
+
+- I²C allows multiple devices, such as sophisticated sensors, memory chips, and display drivers, to communicate with the Raspberry Pi using only two wires (SDA and SCL).  
+- By importing `smbus`, Python code gains the ability to **address specific external chips** and send commands (write operations) or receive complex data (read operations) from them.  
+
+This is essential for integrating advanced components that require a dedicated communication bus rather than simple ON/OFF signals.
+
+*** 
+
+## Tools and Applications Used
+
+During the development of our WRO robot project, we used several applications to design, plan, and present our work efficiently:
+
+1. **Flowchart Design – BoardMix**  
+   We used **BoardMix** to create clear and organized flowcharts for our robot’s logic and program structure. This helped us plan the sequence of operations before writing the actual code.
+
+2. **Circuit Design – Fritzing**  
+   **Fritzing** was used to design and visualize the electronic circuits of the robot. It allowed us to connect sensors, motors, and other components on a virtual breadboard before physical assembly.
+
+3. **Presentation and Background – Canva**  
+   **Canva** was used to create professional backgrounds, diagrams, and visual materials for presentations and documentation, making our project visually appealing and easy to understand.
+
+
+## Estimated Cost of Components
+
+| Component                       | Estimated Cost (USD) |
+|---------------------------------|-------------------|
+| ASRC-CM-DIY Version              | $142              |
+| Raspberry Pi 5 Model B           | $35               |
+| Motor Driver L298N               | $5                |
+| Motor DC                         | $20               |
+| Servo Motor                      | $6                |
+| Voltage Regulator XL4015         | $7                |
+| Gyroscope MPU6050                | $15               |
+| Four Ultrasonic Sensors          | $40               |
+| PC i7                            | $1000             |
+| Smart Car Motors GA25 370        | $100              |
+| **Total**                        | **$1370**         |

@@ -130,7 +130,15 @@ The components of the car were connected and operated using a Raspberry Pi, prog
 
 **This is the chassis**
 
-![car](https://github.com/user-attachments/assets/e9da738f-8dcb-413c-9adc-34b0215bbf0a)
+<!-- Chassis Image -->
+<table align="center">
+  <tr>
+    <td align="center">
+      <img width="685" height="612" alt="Chassis" src="https://github.com/user-attachments/assets/e9da738f-8dcb-413c-9adc-34b0215bbf0a" />
+      <p><b>Chassis</b>
+    </td>
+  </tr>
+</table>
 
 - Watch this video from the manufacturing source  [click here](https://www.youtube.com/watch?v=w_RRwR02S6U)
 
@@ -144,7 +152,15 @@ The components of the car were connected and operated using a Raspberry Pi, prog
 
 **Car size**
 
-![61TixKds-fL _AC_SL1200_](https://github.com/user-attachments/assets/2af9e034-c06c-4479-8742-9a26020d7f70)
+<!-- Car Size Image -->
+<table align="center">
+  <tr>
+    <td align="center">
+      <img width="685" height="612" alt="Car Size" src="https://github.com/user-attachments/assets/2af9e034-c06c-4479-8742-9a26020d7f70" />
+      <p><b>Car Size</b>
+    </td>
+  </tr>
+</table>
 
 <hr>
 </p>
@@ -160,7 +176,15 @@ Thanks to the use of the Ackermann Steering system, the car replicates the actua
 
 - **This is the servo that controls the wheels using the Ackermann Steering system:**
 
-<img width="824" height="594" alt="servo" src="https://github.com/user-attachments/assets/8098b102-12a8-4a48-ade2-6cbb94b3886c" />
+<!-- Ackermann Steering Image -->
+<table align="center">
+  <tr>
+    <td align="center">
+      <img width="824" height="594" alt="Ackermann Steering" src="https://github.com/user-attachments/assets/8098b102-12a8-4a48-ade2-6cbb94b3886c" />
+      <p><b>Ackermann Steering</b>
+    </td>
+  </tr>
+</table>
 
 Ackermann Steering Geometry: Precision Path Management
 The chassis design of our autonomous vehicle is fundamentally based on the Ackermann Steering Geometry. We implemented a custom-modified version of this linkage system to ensure optimal cornering performance.
@@ -171,7 +195,15 @@ In our RWD system, the front wheels execute the steering motion around their res
 
 2. Mathematical Description (The Ideal Geometry)
 
-![Ackermann](https://github.com/user-attachments/assets/5d947b3d-9b4c-4ae5-8616-1f56afc65a02)
+<!-- Ackermann Image -->
+<table align="center">
+  <tr>
+    <td align="center">
+      <img width="685" height="612" alt="Ackermann" src="https://github.com/user-attachments/assets/5d947b3d-9b4c-4ae5-8616-1f56afc65a02" />
+      <p><b>Ackermann</b> 
+    </td>
+  </tr>
+</table>
 
 This diagram illustrates the Ideal Ackerman 
 Steering Geometry. This geometry ensures that all four wheels, when steered, trace concentric circles around a single, common point, the Ackerman Center (C_a).
@@ -203,7 +235,14 @@ Tires (Rubber): The tire material is Rubber
 Performance: The rubber material provides a large coefficient of friction and strong grip (traction) force. This design is crucial for stable and controlled movement across different surfaces
 Internal Structure: All tires are internally fitted with a foam lining (insert). This foam insert provides necessary support and structure to the soft rubber tire, which is essential for consistent performance and shock absorption in RC and robot cars
 
-![61A1H6YRZoL _UF350,350_QL80_](https://github.com/user-attachments/assets/9068ce34-bb8c-4153-b0e0-9433e0bb5ad7)
+<table align="center">
+  <tr>
+    <td align="center">
+      <img width="685" height="612" alt="Robot Car Gears" src="https://github.com/user-attachments/assets/9068ce34-bb8c-4153-b0e0-9433e0bb5ad7" />
+      <p><b>Wheels</b> 
+    </td>
+  </tr>
+</table>
 
 <hr>
 </p>
@@ -215,11 +254,27 @@ Gears are mechanical parts that transfer motion and rotation from the motor to t
 By replacing the large gears with smaller ones, we were able to reduce the car's speed and increase control accuracy, especially when performing precise movements or working with the distance sensor and relay.
 - This modification helped make the car's movement more stable and safe, while maintaining the motor's power to drive the wheels smoothly
 
-<img width="927" height="352" alt="1" src="https://github.com/user-attachments/assets/2887284f-e565-4815-9ff5-6f3e8d6506ab" />
+<!-- Additional Image -->
+<table align="center">
+  <tr>
+    <td align="center">
+      <img width="927" height="352" alt="Additional Image" src="https://github.com/user-attachments/assets/2887284f-e565-4815-9ff5-6f3e8d6506ab" />
+      <p><b>Robot Car Gears</b>
+    </td>
+  </tr>
+</table>
 
 ***
 
-<img width="766" height="405" alt="part" src="https://github.com/user-attachments/assets/9ae0b720-7180-4fcb-bb56-5eafebaee228" />
+<!-- BOM Image -->
+<table align="center">
+  <tr>
+    <td align="center">
+      <img width="766" height="405" alt="BOM" src="https://github.com/user-attachments/assets/9ae0b720-7180-4fcb-bb56-5eafebaee228" />
+      <p><b>BOM</b>
+    </td>
+  </tr>
+</table>
 
 ### 📦 Bill of Materials (BOM)
 
@@ -250,7 +305,14 @@ By replacing the large gears with smaller ones, we were able to reduce the car's
 <hr>
 </p>
 
-![71HcujKQaNL _AC_SL1500_](https://github.com/user-attachments/assets/f7be5660-cb13-4402-ad8d-7867f43b7131)
+<table align="center">
+  <tr>
+    <td align="center">
+      <img width="685" height="612" alt="BOM" src="https://github.com/user-attachments/assets/f7be5660-cb13-4402-ad8d-7867f43b7131" />
+      <p><b>Brass Hex Standoffs</b> 
+    </td>
+  </tr>
+</table>
 
 - **Brass Hex Standoffs** 
 
@@ -267,7 +329,15 @@ We used them to raise the robot’s layers securely, and they come in different 
 
 **Creality Ender 5S1**
 
-![Creality Ender 5S1](https://github.com/user-attachments/assets/c0de7cdd-aa2d-4eb0-91d3-47151be23150)
+<!-- Creality Ender 5 S1 Image -->
+<table align="center">
+  <tr>
+    <td align="center">
+      <img width="685" height="612" alt="Creality Ender 5 S1" src="https://github.com/user-attachments/assets/c0de7cdd-aa2d-4eb0-91d3-47151be23150" />
+      <p><b>Creality Ender 5 S1</b>
+    </td>
+  </tr>
+</table>
 
 The Ender-5 S1 is an FDM 3D printer with a stable cube-frame structure. It was designed to deliver better performance than previous models in the Ender series, offering faster and more responsive printing capabilities.
 It is considered a great option for hobbyists and medium-level prototyping, thanks to its advanced features such as motion acceleration, direct-drive extrusion, and automatic bed-leveling support
@@ -326,7 +396,15 @@ It is considered a great option for hobbyists and medium-level prototyping, than
 <hr>
 
 #### **Filament**: Polylactic Acid or simply known as **PLA**  
-![PLA_Family](https://github.com/user-attachments/assets/7bd5eb8a-3b57-4c67-a5d5-f70937c5c195)
+<!-- PLA Filament Image -->
+<table align="center">
+  <tr>
+    <td align="center">
+      <img width="685" height="612" alt="PLA Filament" src="https://github.com/user-attachments/assets/7bd5eb8a-3b57-4c67-a5d5-f70937c5c195" />
+      <p><b>PLA Filament</b> 
+    </td>
+  </tr>
+</table>
 
 PLA (Polylactic Acid) is one of the most widely used filaments in 3D printing. It is a biodegradable thermoplastic derived from renewable resources such as cornstarch or sugarcane. PLA is favored for its ease of printing, low warping, and minimal odor, making it ideal for FDM (fused deposition modeling) 3D printers. This filament is best suited for prototyping, decorative items, and educational projects, offering good strength and surface finish.  
 
@@ -376,7 +454,15 @@ We selected the Raspberry Pi 4 for its high-performance quad-core Cortex-A72 pro
 - Computer Vision (CV): Processing real-time video frames from the USB Camera using the OpenCV library to detect and track colored obstacles.
 - Sensor Fusion: Rapidly integrating data from the IMU (Gyroscope) and the four Ultrasonic Sensors for path correction and obstacle avoidance.
 - In compliance with competition rules, the code is loaded onto the Raspberry Pi prior to the start. The entire autonomous routine is initiated by a physical push button connected to a GPIO pin, which activates the main Python script.
-![R](https://github.com/user-attachments/assets/7df9a525-2814-4c7d-b86d-4e2bccb98d24)
+<!-- Robot Mind Image -->
+<table align="center">
+  <tr>
+    <td align="center">
+      <img width="685" height="612" alt="Robot mind" src="https://github.com/user-attachments/assets/7df9a525-2814-4c7d-b86d-4e2bccb98d24" />
+      <p><b>Robot Mind</b>
+    </td>
+  </tr>
+</table>
 
 - **Motor Driver L298N**
 
@@ -398,7 +484,15 @@ Key Technical Data:
 - Maximum Power Dissipation: \text{20W} (at T = 75^\circ C)
 - On-board Feature: Integrated +5V regulated output supply.
 - Approximate Dimensions: 4.3cm × 4.3cm × 2.7cm
-![d](https://github.com/user-attachments/assets/9be4d7c9-9bb2-4e9f-9979-cf03fbd57654)
+<!-- Motor Driver L298N Image -->
+<table align="center">
+  <tr>
+    <td align="center">
+      <img width="685" height="612" alt="Motor Driver L298N" src="https://github.com/user-attachments/assets/9be4d7c9-9bb2-4e9f-9979-cf03fbd57654" />
+      <p><b>Motor Driver L298N</b>
+    </td>
+  </tr>
+</table>
 
 - **Motor DC**
 
@@ -428,8 +522,24 @@ This motor belongs to the class of DC Geared Motors, specifically the JGA25-370 
 - The 6 wires generally correspond to:
 1)	Two Wires (Motor): For the 12V motor power (e.g., Red/White or Red/Black).
 2)	Four Wires (Encoder): VCC (Encoder Power, usually 5V or 3.3V), GND, and the two signal lines (Channel A and Channel B).
-![motor](https://github.com/user-attachments/assets/062b6f21-24eb-441e-92e2-49b57b84d322)
-![Encode](https://github.com/user-attachments/assets/803035f0-677a-4387-90a3-af9d1a6f99ce)
+<!-- Motor DC Image -->
+<table align="center">
+  <tr>
+    <td align="center">
+      <img width="685" height="612" alt="Motor DC" src="https://github.com/user-attachments/assets/062b6f21-24eb-441e-92e2-49b57b84d322" />
+      <p><b>Motor DC</b>
+    </td>
+  </tr>
+</table>
+<!-- Encoder Image -->
+<table align="center">
+  <tr>
+    <td align="center">
+      <img width="685" height="612" alt="Encoder" src="https://github.com/user-attachments/assets/803035f0-677a-4387-90a3-af9d1a6f99ce" />
+      <p><b>Encoder</b> 
+    </td>
+  </tr>
+</table>
 
 
 - **Servo Motor**
@@ -442,7 +552,15 @@ Model: Based on its characteristics (and likely MG996R designation), the model u
 2. Control and Power
 Control Protocol: The servo angle is precisely controlled by sending Pulse Width Modulation (PWM) signals from the Raspberry Pi's GPIO header. The duration of the pulse dictates the angular position of the angular position of the wheel.
 Power: The servo requires a stable operating voltage typically in the 5V  -  6V range. This power is reliably supplied by the Step-down Module (Voltage Regulator), ensuring steady operation independent of the main 9V battery fluctuations
-![servo motor](https://github.com/user-attachments/assets/6f7a34e5-0034-4c64-9280-5f6f9f28bb13)
+<!-- Servo Motor Image -->
+<table align="center">
+  <tr>
+    <td align="center">
+      <img width="685" height="612" alt="Servo Motor" src="https://github.com/user-attachments/assets/6f7a34e5-0034-4c64-9280-5f6f9f28bb13" />
+      <p><b>Servo Motor</b>
+    </td>
+  </tr>
+</table>
 
 - **voltage regulator XL4015**
 
@@ -452,7 +570,15 @@ The robot's propulsion system operates on a 9V battery supply, necessary for the
 The primary function of this module is to safely and efficiently step-down the 9V input voltage to a regulated 5V output. This prevents potential damage to the control board and ensures power stability, which is vital for the reliable operation of the Raspberry Pi's CPU and GPIO communications.
 2. Key Operational Data
 The module accepts a wide input range 4.5V to 40V), easily accommodating the 12V battery output. It is manually tuned to provide a precise 5V output voltage and is rated for a continuous output current of approximately 3A, providing a sufficient power budget for all low-power electronics in the system. The high conversion efficiency (> 80\%) minimizes energy loss as heat, preserving battery life
-<img width="634" height="444" alt="voltage regulator XL4015" src="https://github.com/user-attachments/assets/780b0bdf-d0de-46ae-a807-0672d56c7aa9" />
+<!-- Voltage Regulator XL4015 Image -->
+<table align="center">
+  <tr>
+    <td align="center">
+      <img width="685" height="612" alt="Voltage Regulator XL4015" src="https://github.com/user-attachments/assets/780b0bdf-d0de-46ae-a807-0672d56c7aa9" />
+      <p><b>Voltage Regulator XL4015</b> 
+    </td>
+  </tr>
+</table>
 
 - **Relay**
 
@@ -470,7 +596,15 @@ Relays are used to control devices that require higher current or voltage than t
 - Cutting power in safety or smart control systems.
 Thus, the relay allows microcontrollers to safely and efficiently control high-power electrical systems without damaging sensitive electronic components
 
-![relay](https://github.com/user-attachments/assets/7b52c186-1589-4f6e-a9ce-07a3e6804454)
+<!-- Relay Module Image -->
+<table align="center">
+  <tr>
+    <td align="center">
+      <img width="685" height="612" alt="Relay Module" src="https://github.com/user-attachments/assets/7b52c186-1589-4f6e-a9ce-07a3e6804454" />
+      <p><b>Relay Module</b>
+    </td>
+  </tr>
+</table>
 
 
 - **gyroscope MPU6050**
@@ -488,7 +622,15 @@ The MPU-6050 communicates with the Raspberry Pi 4 using the efficient I2C serial
 - Power: The module operates between 3V to 5V and is safely powered by the 5V} regulated output from the LM2596 module.
 3. Role in Navigation
 The IMU provides the core data for internal navigation (dead reckoning). Regardless of whether the system implements explicit sensor fusion with the ultrasonic sensors, the highly accurate angular rate and acceleration data are crucial for stabilizing the robot's movement and ensuring that the programmed path is maintained against physical disturbances
-![j](https://github.com/user-attachments/assets/ee42bb96-c9a1-4cdc-b19b-56fb1aeb2d33)
+<!-- Gyroscope MPU6050 Image -->
+<table align="center">
+  <tr>
+    <td align="center">
+      <img width="685" height="612" alt="Gyroscope MPU6050" src="https://github.com/user-attachments/assets/ee42bb96-c9a1-4cdc-b19b-56fb1aeb2d33" />
+      <p><b>Gyroscope MPU6050</b>
+    </td>
+  </tr>
+</table>
 
 
 - **Ultrasonic**
@@ -507,25 +649,66 @@ The HC-SR04 module operates on the principle of measuring the Time-of-Flight (To
 3– Calculation: The Raspberry Pi measures this pulse width (time), and the distance is calculated using the formula
 Distance = Speed × Time, divided by two since the time measured is for the signal's round trip.
 The sensor boasts a practical measuring range of 2cm to 400cm and an accuracy that can reach 3mm. This combination of range and precision makes it perfectly suited for the short-range, dynamic obstacle avoidance challenges presented in the competition course
-![Introduction-to-HC-SR04](https://github.com/user-attachments/assets/77b78609-52e6-4001-93a0-3b93dd555b82)
+<!-- Ultrasonic Sensor HC-SR04 Image -->
+<table align="center">
+  <tr>
+    <td align="center">
+      <img width="685" height="612" alt="Ultrasonic Sensor HC-SR04" src="https://github.com/user-attachments/assets/77b78609-52e6-4001-93a0-3b93dd555b82" />
+      <p><b>Ultrasonic Sensor HC-SR04</b>
+    </td>
+  </tr>
+</table>
 
 
 - **switch**
 
 This switch controls the connection and disconnection of power between the battery and the robot. Since the rules require cutting off power before operation, we added this switch to comply with that. We soldered the red (positive) wire to the input side of the switch and another red wire to the output side. When the switch is turned on, power flows from the battery to the step-down module and then to the rest of the robot’s components
-![switch](https://github.com/user-attachments/assets/2f993690-e7aa-41dd-92d4-d6dc8d43ba04)
+<!-- Switch Image -->
+<table align="center">
+  <tr>
+    <td align="center">
+      <img width="685" height="612" alt="Switch" src="https://github.com/user-attachments/assets/2f993690-e7aa-41dd-92d4-d6dc8d43ba04" />
+      <p><b>Switch</b> 
+    </td>
+  </tr>
+</table>
 
 ### Robot 
 **This picture shows our robot in real life, displaying how it looks with all its components assembled**
-![2](https://github.com/user-attachments/assets/ba2e5261-6d83-489a-a7eb-884af5177500)
+<!-- Final Robot Image -->
+<table align="center">
+  <tr>
+    <td align="center">
+      <img width="685" height="612" alt="Final Robot" src="https://github.com/user-attachments/assets/ba2e5261-6d83-489a-a7eb-884af5177500" />
+      <p><b>Final Robot</b> 
+    </td>
+  </tr>
+</table>
 
 ***
 ### Wiring Diagram and Power Distribution Diagram
 - **It shows you the connection of various components to the Raspberry Pi**
-![6](https://github.com/user-attachments/assets/4c8421e0-56f3-4bf7-9b27-8d39f5d2d489)
+<!-- B Image -->
+<table align="center">
+  <tr>
+    <td align="center">
+      <img width="685" height="612" alt="B Image" src="https://github.com/user-attachments/assets/3a26353a-cda9-432d-8b95-0b97a5502b45" />
+      <p>Power Distribution Diagram</p>
+    </td>
+  </tr>
+</table>
 
 - **It shows the ports of various components connected to the Raspberry Pi, as well as the voltage levels supplied to the Raspberry Pi and its connected components**
-<img width="925" height="557" alt="7" src="https://github.com/user-attachments/assets/26daaefd-ef29-4e43-9512-6f1685e3db0e" />
+<!-- A Image -->
+<table align="center">
+  <tr>
+    <td align="center">
+      <img width="685" height="612" alt="A Image" src="https://github.com/user-attachments/assets/d407f450-0c25-46b1-a033-2c93a88d0829" />
+      <p> Wiring Diagram</p>
+    </td>
+  </tr>
+</table>
+
 
 
 ***
@@ -538,7 +721,7 @@ In this stage, the robot is required to navigate the track for three complete la
 
 ### **Open Challenge round (Youtube Link)**
 
-This video shows our robot completing the first round(Open Challenge), you can [click here]() to view the video we created.
+This video shows our robot completing the first round(Open Challenge), you can [click here](https://www.youtube.com/watch?v=wE9Jfp3p2G0) to view the video we created.
 
 <div align="center">
   <a href="">
@@ -578,6 +761,6 @@ We incorporated ultrasonic sensors into the robot’s design to provide it with 
 
 ### **Flowchart**
 
-![OpenChallenge](https://github.com/user-attachments/assets/6dca9022-0850-457c-abc6-37278b23cd26)
+![OpenChallenge](https://github.com/user-attachments/assets/3c439782-7f84-4bdf-8458-839d14441c1a)
 
 <hr>

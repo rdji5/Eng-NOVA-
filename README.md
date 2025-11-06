@@ -454,7 +454,7 @@ The final designs are shown below:
 ### **Third, parts of the robot**
 - **Robot mind**
 
-### 🔹 Raspberry Pi 4 — Main Processing Unit (MPU)
+###  Raspberry Pi 4 — Main Processing Unit (MPU)
 
 The **Raspberry Pi 4 Model B** serves as the **Main Processing Unit (MPU)**, acting as the robot’s central brain.  
 It executes the complex Python code and coordinates all real-time sensory data and actuator commands.
@@ -625,6 +625,8 @@ This motor belongs to the class of DC Geared Motors, specifically the JGA25-370 
 </table>
 
 
+
+  
 - **Servo Motor**
 
 Precise Steering Actuator

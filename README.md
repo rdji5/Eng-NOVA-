@@ -52,7 +52,10 @@ Follow us on:
 
 ### **Documentation Video (Youtube Link)**
 This video is made with great care and dedication. It compiles all the information we included in the document
- you can [click here](https://www.youtube.com/watch?v=1EKQJU2QSVc) to view the video we created.
+ you can [click here](https://youtu.be/0gfjavgVjbM?si=V2pA-b_AwckWUnsM) to view the video we created.
+
+
+
  
 ***
 

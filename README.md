@@ -50,7 +50,7 @@ Follow us on:
 
 ### **Documentation Video (Youtube Link)**
 This video is made with great care and dedication. It compiles all the information we included in the document
- you can [click here](https://youtu.be/0gfjavgVjbM?si=V2pA-b_AwckWUnsM) to view the video we created.
+ you can [click here](https://youtu.be/C_BoXmBWQ4o?si=mJF7Yn2e1AimlPT-) to view the video we created.
 
 
 

@@ -35,8 +35,6 @@ Follow us on:
 
 `Schemes`Drawings that show how the robot’s parts and wires are connected.
 
-`Team-Photos` This folder features photos of our team members participating in the WRO 2025 Future Engineers competition.
-
 `To him work` Explains how the robot works
 
 `Videos` Contains links to videos demonstrating how the robot performs and completes both missions successfully.

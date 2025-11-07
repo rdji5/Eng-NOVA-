@@ -1,7 +1,7 @@
 Video
 ====
 Documentation Video:
-[https://www.youtube.com/watch?v=1EKQJU2QSVc]
+[https://youtu.be/0gfjavgVjbM?si=V2pA-b_AwckWUnsM]
 
 
 Car installation video:

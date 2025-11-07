@@ -1,5 +1,5 @@
 # NOVA-Future-Engineers
-### ***We Are Team The NOVA Engineers***
+### ***We Are The NOVA Engineers Team***
 
 </p>
 <p align="center">
@@ -29,7 +29,7 @@ Follow us on:
 
 `Tables` This folder includes all the tables we used in our project, such as time plans, task schedules, and data organization charts.
 
-`Program` Contains all the code we wrote for the WRO 2024 Future Engineers and some charts that explain it.
+`Program` Contains all the code we wrote for the WRO 2025 Future Engineers and some charts that explain it.
 
 `Robot-Photos` Includes multiple photos of the robot from various angles — top, side, and bottom — to provide a full visual overview of the design.
 

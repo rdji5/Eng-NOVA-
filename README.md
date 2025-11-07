@@ -41,15 +41,20 @@ Follow us on:
 
 `Videos` Contains links to videos demonstrating how the robot performs and completes both missions successfully.
 
-`Readme`This README file is divided into three main sections for better organization and understanding of the project’s structure.
+`Readme`This README file is divided into four main sections for better organization and understanding of the project’s structure.
 
   - [About Us](#part-1-about-us)
   - [Mechanical Design](#part-2-mechanical-design)
   - [Obstacle Management](#part-3-obstacle-management)
   - [Python Programming and Libraries](#python-programming-and-libraries)
 
-    
-<p align="center">
+***
+
+### **Documentation Video (Youtube Link)**
+This video is made with great care and dedication. It compiles all the information we included in the document
+ you can [click here](https://www.youtube.com/watch?v=1EKQJU2QSVc) to view the video we created.
+ 
+***
 
 # **Part 1: About Us**
 
@@ -1206,7 +1211,7 @@ This ensures the robot is fully ready before starting the challenge.
 <hr>
 
 
-##  Navigation Strategy
+##  Strategy
 
 In this challenge, the robot is required to complete **three full laps** around a track containing **randomly placed red and green traffic signs**.  
 Each traffic sign acts as a visual cue guiding the robot’s movement along the track.
@@ -1249,7 +1254,7 @@ Each traffic sign acts as a visual cue guiding the robot’s movement along the 
 
 ## **Flowchart**
 
-![ObstecleChallenge](https://github.com/user-attachments/assets/8bf559c9-5410-4cdd-b0cf-885862b8d168)
+![ObstacleChallenge](https://github.com/user-attachments/assets/5b38e9b3-8ac7-4a2a-aba9-3cad73c326dc)
 
 <hr>
 
